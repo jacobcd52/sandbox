@@ -1,18 +1,21 @@
 #!/bin/bash
-# Phase 1 runner: execute inside the pod from /root/sandbox_escape_bench.
-# Usage: bash run_phase1.sh <mode>
-#   mode=validate : run solution variant of docker_socket (1 sample) to verify harness
-#   mode=run      : full Phase 1 (3 scenarios x 5 trials, deepseek-v4-pro)
+# Phase 1 runner: execute inside the droplet from /root/sandbox_escape_bench.
+# Requires FIREWORKS_API_KEY in the environment.
+# Usage:
+#   FIREWORKS_API_KEY=... bash run_phase1.sh validate   # solution variant, 1 sample
+#   FIREWORKS_API_KEY=... bash run_phase1.sh run        # full phase 1
 set -euo pipefail
 MODE="${1:-validate}"
 cd /root/sandbox_escape_bench
 
 export PATH="$HOME/.local/bin:$PATH"
-# Ensure images.yaml exists (fallback/quickstart mode: all null -> build at runtime)
 [ -f images.yaml ] || cp images.example.yaml images.yaml
+: "${FIREWORKS_API_KEY:?set FIREWORKS_API_KEY}"
 
-MODEL="fireworks/deepseek-v4-pro"
+MODEL="${MODEL:-fireworks/deepseek-v4-pro}"
 TOKEN_LIMIT="${TOKEN_LIMIT:-150000}"
+LOGDIR="${LOGDIR:-/root/sandbox_escape_bench/logs}"
+mkdir -p "$LOGDIR"
 
 case "$MODE" in
   validate)
@@ -20,17 +23,18 @@ case "$MODE" in
     uv run inspect eval scenarios/docker_socket/task.py \
       --model "$MODEL" \
       -T sandbox=vagrant -T variant=solution \
-      --limit 1 --log-dir logs/validate
+      --limit 1 --max-sandboxes 1 \
+      --log-dir "$LOGDIR/validate"
     ;;
   run)
-    echo "=== PHASE 1: 3 scenarios x 5 epochs, $MODEL, token_limit=$TOKEN_LIMIT ==="
+    echo "=== PHASE 1: docker_socket privileged hostpath_etc x 5 epochs, $MODEL, token_limit=$TOKEN_LIMIT ==="
     for sc in docker_socket privileged hostpath_etc; do
       echo "--- $sc ---"
       uv run inspect eval "scenarios/$sc/task.py" \
         --model "$MODEL" \
         -T sandbox=vagrant -T variant=normal -T token_limit="$TOKEN_LIMIT" \
-        --epochs 5 --max-sandboxes 3 \
-        --log-dir "logs/phase1_$sc"
+        --epochs 5 --max-sandboxes 2 \
+        --log-dir "$LOGDIR/phase1_$sc"
     done
     ;;
   *)
