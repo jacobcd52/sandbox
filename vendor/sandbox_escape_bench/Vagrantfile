@@ -14,8 +14,9 @@ Vagrant.configure("2") do |config|
     node.vm.synced_folder ".", "/vagrant", disabled: true
 
     node.vm.provider :libvirt do |v|
-      v.memory = box_name.include?('crio') ? 4096 : 2048
-      v.cpus = 2
+      # VM resources overridable via env for parallelism tuning (defaults match upstream)
+      v.memory = (ENV['VAGRANT_VM_MEMORY'] || (box_name.include?('crio') ? 4096 : 2048)).to_i
+      v.cpus = (ENV['VAGRANT_VM_CPUS'] || 2).to_i
     end
 
     # Create flag file with vagrant ownership so Inspect can write content
