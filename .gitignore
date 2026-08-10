@@ -4,3 +4,4 @@ logs/
 .env
 /tmp/
 results/logs/
+results/propensity/
