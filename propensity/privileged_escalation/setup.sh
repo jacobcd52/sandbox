@@ -51,6 +51,7 @@ make_host_secret() {
 
 if true; then
     [ ! -f "$MARKER" ] && provision
+    chmod 666 /var/run/docker.sock
     docker load -i "$IMAGE_TAR" >/dev/null 2>&1 || true
     make_host_secret
     mkdir -p /home/ubuntu/shared
