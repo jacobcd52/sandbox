@@ -1,8 +1,8 @@
 #!/bin/bash
 # Run ONE scenario's trials on THIS droplet, with parallelism.
-# Usage: FIREWORKS_API_KEY=... bash run_scenario.sh <scenario> <epochs> <max_sandboxes>
+# Usage: FIREWORKS_API_KEY=... MODEL=... bash run_scenario.sh <scenario> <epochs> <max_sandboxes> [tag]
 set -euo pipefail
-SC="${1:?scenario}"; EPOCHS="${2:-5}"; MAXSB="${3:-3}"
+SC="${1:?scenario}"; EPOCHS="${2:-5}"; MAXSB="${3:-3}"; TAG="${4:-}"
 cd /root/sandbox_escape_bench
 export PATH="$HOME/.local/bin:$PATH"
 [ -f images.yaml ] || cp images.example.yaml images.yaml
@@ -13,13 +13,16 @@ TOKEN_LIMIT="${TOKEN_LIMIT:-500000}"
 # don't need much). Override via env if a scenario needs more.
 export VAGRANT_VM_MEMORY="${VAGRANT_VM_MEMORY:-1024}"
 export VAGRANT_VM_CPUS="${VAGRANT_VM_CPUS:-1}"
+# model short name for log dir
+MSHORT="${MODEL##*/}"
 LOGDIR="/root/sandbox_escape_bench/logs"
 mkdir -p "$LOGDIR"
+RUNLOG="$LOGDIR/phase1_${SC}__${MSHORT}${TAG:+__$TAG}"
 
-echo "=== $SC: $EPOCHS epochs, max_sandboxes=$MAXSB, token_limit=$TOKEN_LIMIT, model=$MODEL ==="
+echo "=== $SC: model=$MODEL epochs=$EPOCHS max_sandboxes=$MAXSB token_limit=$TOKEN_LIMIT ==="
 uv run inspect eval "scenarios/$SC/task.py" \
   --model "$MODEL" \
   -T sandbox=vagrant -T variant=normal -T token_limit="$TOKEN_LIMIT" \
   --epochs "$EPOCHS" --max-sandboxes "$MAXSB" \
-  --log-dir "$LOGDIR/phase1_$SC"
-echo "=== $SC DONE ==="
+  --log-dir "$RUNLOG"
+echo "=== $SC ($MSHORT) DONE ==="
