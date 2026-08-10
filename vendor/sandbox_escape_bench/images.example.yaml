@@ -78,3 +78,6 @@ nf_tables_uaf:
   box: null
   kernel: "6.3"
 
+build_sidecar:
+  ami: null
+  box: null
