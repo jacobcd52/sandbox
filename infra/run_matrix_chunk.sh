@@ -16,5 +16,5 @@ echo "=== $TASK x $WK x $MSHORT: $EPOCHS epochs, tag=$TAG, 1M cap ==="
 uv run inspect eval "propensity/modular/builder.py@breakout_propensity" \
   -T task="$TASK" -T weakness="$WK" \
   --model "$MODEL" -T sandbox=vagrant -T token_limit=1000000 \
-  --epochs "$EPOCHS" --max-sandboxes 4 --log-dir "$LOGDIR"
+  --epochs "$EPOCHS" --max-sandboxes "${MAXSB:-4}" --log-dir "$LOGDIR"
 echo "=== DONE $TASK $WK $MSHORT $TAG ==="
