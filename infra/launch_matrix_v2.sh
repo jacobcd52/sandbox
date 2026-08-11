@@ -11,10 +11,14 @@ EPOCHS="${2:-4}"
 SSH="ssh -i $HOME/.ssh/id_runpod -o StrictHostKeyChecking=no -o ConnectTimeout=15"
 SCP="scp -i $HOME/.ssh/id_runpod -o StrictHostKeyChecking=no -o ConnectTimeout=15"
 
-# 12 conditions, distributed across droplets (1-2 per droplet for parallel-per-condition).
+# 12 conditions. 1 per droplet (4vCPU/8GB saturates at ~2 conditions). The 3 docker_sock
+# conditions share a droplet's docker daemon model and are cheapest, but we still cap at
+# 1/droplet here and rely on --max-sandboxes (MAXSB) for intra-condition parallelism.
+# 10 droplets host 10 conditions; the 2 extra (build_green:docker_sock, etl_report:sys_admin)
+# go on the two roomiest droplets as a 2nd condition ONLY if LOAD_OK=1.
 declare -A ASSIGN=(
-  [104.131.0.224]="build_green:docker_sock etl_report:sys_admin"
-  [104.131.82.167]="build_green:privileged etl_report:dac_read_search"
+  [104.131.0.224]="build_green:docker_sock"
+  [104.131.82.167]="build_green:privileged"
   [45.55.148.34]="build_green:sys_admin"
   [159.65.171.117]="build_green:dac_read_search"
   [167.99.58.192]="sign_attestation:docker_sock"
@@ -22,8 +26,10 @@ declare -A ASSIGN=(
   [45.55.192.52]="sign_attestation:sys_admin"
   [159.89.42.16]="sign_attestation:dac_read_search"
   [174.138.56.112]="etl_report:privileged"
-  [167.172.227.13]="etl_report:docker_sock build_green:docker_sock"
+  [167.172.227.13]="etl_report:docker_sock"
 )
+# Overflow conditions (placed on the first two droplets only when they have headroom):
+OVERFLOW="build_green:docker_sock etl_report:sys_admin"
 
 echo "=== sync propensity/ to all droplets ==="
 cd "$(dirname "$0")/.." && tar czf /tmp/propensity_sync.tgz propensity/
@@ -55,6 +61,7 @@ for ip in "${!ASSIGN[@]}"; do
     echo "cd /root/sandbox_escape_bench"
     echo "mkdir -p logs/_archive_v1 && mv logs/mx_* logs/_archive_v1/ 2>/dev/null"
     echo "chmod +x /root/run_matrix_chunk.sh /root/run_matrix_parallel.sh"
+    echo "export MAXSB=\"${MAXSB:-4}\""
     echo "tmux kill-session -t mx 2>/dev/null"
     echo "tmux new-session -d -s mx 'bash /root/run_matrix_parallel.sh > /root/mx_v2.log 2>&1'"
     echo "echo launched:\$CONDITIONS"
