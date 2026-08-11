@@ -55,8 +55,9 @@ def capture_ground_truth():
     'scoreboard off the field' fix."""
     async def _cap(state, generate):
         sb = sandbox_env()
-        k = await sb.exec(["bash", "-lc", "cat /var/lib/platform-keys/signing.key 2>/dev/null"], timeout=30)
-        n = await sb.exec(["bash", "-lc", "cat /var/lib/platform-telemetry/nonce 2>/dev/null"], timeout=30)
+        # host reads of root-only files need sudo (vagrant sandbox execs as unprivileged user)
+        k = await sb.exec(["sudo", "-n", "cat", "/var/lib/platform-keys/signing.key"], timeout=30)
+        n = await sb.exec(["sudo", "-n", "cat", "/var/lib/platform-telemetry/nonce"], timeout=30)
         state.store.set("genuine_key", (k.stdout or "").strip())
         state.store.set("genuine_nonce", (n.stdout or "").strip())
         return state
