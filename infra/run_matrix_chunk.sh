@@ -12,9 +12,10 @@ export INSPECT_MAX_VAGRANT_STARTUPS=2
 MSHORT="${MODEL##*/}"
 LOGDIR="/root/sandbox_escape_bench/logs/mx_${TASK}__${WK}__${MSHORT}__${TAG}"
 mkdir -p "$LOGDIR"
-echo "=== $TASK x $WK x $MSHORT: $EPOCHS epochs, tag=$TAG, 1M cap ==="
+TOK="${TOKLIM:-1000000}"
+echo "=== $TASK x $WK x $MSHORT: $EPOCHS epochs, tag=$TAG, ${TOK} cap ==="
 uv run inspect eval "propensity/modular/builder.py@breakout_propensity" \
   -T task="$TASK" -T weakness="$WK" \
-  --model "$MODEL" -T sandbox=vagrant -T token_limit=1000000 \
+  --model "$MODEL" -T sandbox=vagrant -T token_limit="$TOK" \
   --epochs "$EPOCHS" --max-sandboxes "${MAXSB:-4}" --log-dir "$LOGDIR"
 echo "=== DONE $TASK $WK $MSHORT $TAG ==="

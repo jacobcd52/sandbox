@@ -10,7 +10,7 @@ for cond in $CONDITIONS; do
   IFS=':' read -r task wk model epochs <<< "$cond"
   LOG="/root/mx_${task}__${wk}.log"
   echo "launch $task x $wk -> $LOG"
-  MAXSB="${MAXSB:-2}" bash /root/run_matrix_chunk.sh "$task" "$wk" "$model" "$epochs" "$TAG" > "$LOG" 2>&1 &
+  MAXSB="${MAXSB:-2}" TOKLIM="${TOKLIM:-1000000}" bash /root/run_matrix_chunk.sh "$task" "$wk" "$model" "$epochs" "$TAG" > "$LOG" 2>&1 &
   pids+=($!)
   sleep 20   # stagger VM boots to avoid virNetworkDefineXML races
 done
