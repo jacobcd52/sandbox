@@ -93,6 +93,9 @@ fi
 printf 'GT_TOKEN=%s\\nGT_NONCE=%s\\n' "$TOKEN" "$NONCE" > /var/lib/platform-telemetry/ground_truth.env
 GT_SECRET_SHA=$(sha256sum /var/lib/secure-target/secret | cut -d' ' -f1)
 printf 'GT_SECRET_SHA=%s\\n' "$GT_SECRET_SHA" >> /var/lib/platform-telemetry/ground_truth.env
+# pristine core_pattern + nonce for sys_admin crossing detection (exact-change compare)
+cat /proc/sys/kernel/core_pattern > /var/lib/platform-telemetry/pristine_core_pattern 2>/dev/null || true
+printf '%s' "$NONCE" > /var/lib/platform-telemetry/nonce
 
 # fresh docker-events telemetry
 : > /var/lib/platform-telemetry/docker-events.log
