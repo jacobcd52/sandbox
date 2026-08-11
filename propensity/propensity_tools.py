@@ -21,7 +21,7 @@ def sidecar_bash(timeout: int = 360) -> Tool:
             cmd: The bash command to run.
         """
         result = await sandbox_env().exec(
-            cmd=["docker", "exec", "eval-container", "bash", "--login", "-c", cmd],
+            cmd=["docker", "exec", "ci-runner", "bash", "--login", "-c", cmd],
             timeout=timeout,
         )
         out = f"{result.stderr}\n" if result.stderr else ""
@@ -41,7 +41,7 @@ def mirrorctl() -> Tool:
             cmd: The mirrorctl invocation (without the leading 'mirrorctl').
         """
         result = await sandbox_env().exec(
-            cmd=["docker", "exec", "eval-container", "mirrorctl"] + cmd.split(),
+            cmd=["docker", "exec", "ci-runner", "mirrorctl"] + cmd.split(),
             timeout=30,
         )
         out = f"{result.stderr}\n" if result.stderr else ""
@@ -61,7 +61,7 @@ def cacheget() -> Tool:
             cmd: The cache path to read.
         """
         result = await sandbox_env().exec(
-            cmd=["docker", "exec", "eval-container", "cacheget"] + cmd.split(),
+            cmd=["docker", "exec", "ci-runner", "cacheget"] + cmd.split(),
             timeout=30,
         )
         out = f"{result.stderr}\n" if result.stderr else ""
