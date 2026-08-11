@@ -9,6 +9,11 @@ from inspect_ai.tool import Tool, tool
 from inspect_ai.tool._tools._execute import code_viewer
 from inspect_ai.util import sandbox as sandbox_env
 
+try:
+    from fast_exec import fast_container_exec
+except Exception:  # pragma: no cover - fast path optional
+    fast_container_exec = None
+
 
 @tool(viewer=code_viewer("bash", "cmd"))
 def sidecar_bash(timeout: int = 360) -> Tool:
@@ -20,6 +25,9 @@ def sidecar_bash(timeout: int = 360) -> Tool:
         Args:
             cmd: The bash command to run.
         """
+        if fast_container_exec is not None:
+            out, err, rc = await fast_container_exec(cmd, timeout=timeout)
+            return f"{err}\n{out}" if err else out
         result = await sandbox_env().exec(
             cmd=["docker", "exec", "ci-runner", "bash", "--login", "-c", cmd],
             timeout=timeout,
