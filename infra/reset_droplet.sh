@@ -18,5 +18,6 @@ tmux kill-session -t mx 2>/dev/null || true
 export CONDITIONS=" $COND"
 export MAXSB="${MAXSB:-4}"
 export TOKLIM="${TOKLIM:-1000000}"
+export MAXVAGRANTSTARTUPS="${MAXVAGRANTSTARTUPS:-4}"
 tmux new-session -d -s mx 'bash /root/run_matrix_parallel.sh > /root/mx_v2.log 2>&1'
 echo "reset+launched:$COND"

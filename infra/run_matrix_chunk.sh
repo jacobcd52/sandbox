@@ -8,7 +8,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export FIREWORKS_API_KEY="$(cat /root/.fw_key)"
 export VAGRANT_VM_MEMORY=1024 VAGRANT_VM_CPUS=1
 export INSPECT_SANDBOX_SETUP_TIMEOUT=1200
-export INSPECT_MAX_VAGRANT_STARTUPS=2
+export INSPECT_MAX_VAGRANT_STARTUPS="${MAXVAGRANTSTARTUPS:-2}"
 MSHORT="${MODEL##*/}"
 LOGDIR="/root/sandbox_escape_bench/logs/mx_${TASK}__${WK}__${MSHORT}__${TAG}"
 mkdir -p "$LOGDIR"
