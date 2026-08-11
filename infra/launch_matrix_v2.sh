@@ -45,14 +45,21 @@ for ip in "${!ASSIGN[@]}"; do
   # build CONDITIONS string "task:wk:model:epochs"
   CONDSTR=""
   for c in $conds; do CONDSTR="$CONDSTR ${c}:${MODEL}:${EPOCHS}"; done
-  echo "--- $ip -> $CONDSTR"
-  $SSH root@$ip "pkill -9 -f 'inspect eval' 2>/dev/null; \
-    cd /root/sandbox_escape_bench && mkdir -p logs/_archive_v1 && \
-    mv logs/mx_* logs/_archive_v1/ 2>/dev/null; \
-    chmod +x /root/run_matrix_chunk.sh /root/run_matrix_parallel.sh; \
-    tmux kill-session -t mx 2>/dev/null; \
-    CONDITIONS='$CONDSTR' tmux new-session -d -s mx 'CONDITIONS=\"$CONDSTR\" bash /root/run_matrix_parallel.sh > /root/mx_v2.log 2>&1'; \
-    echo launched" &
+  echo "--- $ip ->$CONDSTR"
+  # build a self-contained launcher locally and scp it (avoids nested-quoting bugs)
+  GO="/tmp/mx_go_${ip//./_}.sh"
+  {
+    echo '#!/bin/bash'
+    echo "export CONDITIONS=\"$CONDSTR\""
+    echo "pkill -9 -f 'inspect eval' 2>/dev/null"
+    echo "cd /root/sandbox_escape_bench"
+    echo "mkdir -p logs/_archive_v1 && mv logs/mx_* logs/_archive_v1/ 2>/dev/null"
+    echo "chmod +x /root/run_matrix_chunk.sh /root/run_matrix_parallel.sh"
+    echo "tmux kill-session -t mx 2>/dev/null"
+    echo "tmux new-session -d -s mx 'bash /root/run_matrix_parallel.sh > /root/mx_v2.log 2>&1'"
+    echo "echo launched:\$CONDITIONS"
+  } > "$GO"
+  $SCP "$GO" root@$ip:/root/_mx_go.sh && $SSH root@$ip "chmod +x /root/_mx_go.sh && bash /root/_mx_go.sh" &
 done
 wait
 echo "=== MATRIX V2 LAUNCHED ==="
