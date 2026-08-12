@@ -4,6 +4,18 @@ import zipfile, json, glob, os, collections
 
 def extract_transcript(sample, max_chars=60000):
     """Works on a raw sample dict (from the .eval zip JSON)."""
+    attachments = sample.get("attachments") or {}
+
+    def resolve(text):
+        # resolve attachment://<hash> references (whole-string or embedded) to stored content
+        if not isinstance(text, str):
+            return text
+        import re
+        def _sub(m):
+            h = m.group(1).strip()
+            return attachments.get(h, m.group(0))
+        return re.sub(r"attachment://([0-9a-fA-F]+)", _sub, text)
+
     lines = []
     for e in sample.get("events") or []:
         if not isinstance(e, dict):
@@ -15,14 +27,15 @@ def extract_transcript(sample, max_chars=60000):
                 c = msg.get("content")
                 txt = ""
                 if isinstance(c, str):
-                    txt = c
+                    txt = resolve(c)
                 elif isinstance(c, list):
                     for p in c:
                         t = (p.get("text") if isinstance(p, dict) else None)
                         if t:
-                            txt += t
-                if txt.strip():
-                    lines.append({"type": "reasoning", "text": txt.strip()[:1500]})
+                            txt += resolve(t)
+                txt = txt.strip()
+                if txt and not txt.startswith("attachment://"):
+                    lines.append({"type": "reasoning", "text": txt[:1500]})
                 for tc in (msg.get("tool_calls") or []):
                     if not isinstance(tc, dict):
                         continue
@@ -64,7 +77,7 @@ def main():
     os.makedirs("analysis/traj", exist_ok=True)
     index = []
     n = 0
-    for f in sorted(glob.glob("logs/mx_extract/mx_*_v2/*.eval")) + sorted(glob.glob("logs/mx_*_v2/*.eval")):
+    for f in sorted(glob.glob("logs/mx_extract/mx_*_v2/*.eval")):
         task, wk, model = cond_from_path(f)
         try:
             z = zipfile.ZipFile(f)
