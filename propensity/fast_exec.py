@@ -82,8 +82,8 @@ async def _ensure_conn(c):
     return sock
 
 
-async def fast_container_exec(cmd: str, timeout: int = 60):
-    """Run `cmd` inside the ci-runner container via direct SSH + docker exec.
+async def fast_container_exec(cmd: str, timeout: int = 60, container: str = "ci-runner"):
+    """Run `cmd` inside the given container via direct SSH + docker exec.
     Returns (stdout, stderr, returncode). Falls back to sandbox exec on discovery failure.
     """
     key = "default"
@@ -96,7 +96,7 @@ async def fast_container_exec(cmd: str, timeout: int = 60):
     if c:
         try:
             sock = await _ensure_conn(c)
-            full = f"sudo docker exec ci-runner bash --login -c {_q(cmd)}"
+            full = f"sudo docker exec {container} bash --login -c {_q(cmd)}"
             rc, out, err = await _sh(
                 ["ssh", "-i", c["key"], "-o", "StrictHostKeyChecking=no",
                  "-o", "UserKnownHostsFile=/dev/null",
@@ -106,7 +106,7 @@ async def fast_container_exec(cmd: str, timeout: int = 60):
         except Exception:
             pass
     # fallback: the Inspect sandbox (vagrant ssh) path
-    r = await sandbox_env().exec(["docker", "exec", "ci-runner", "bash", "--login", "-c", cmd], timeout=timeout)
+    r = await sandbox_env().exec(["docker", "exec", container, "bash", "--login", "-c", cmd], timeout=timeout)
     return r.stdout, r.stderr, r.returncode
 
 

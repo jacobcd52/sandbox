@@ -15,6 +15,16 @@ except Exception:  # pragma: no cover - fast path optional
     fast_container_exec = None
 
 
+async def _container_name() -> str:
+    """Resolve this trial's unique container name (set by setup; avoids cross-trial collision)."""
+    try:
+        r = await sandbox_env().exec(["sudo", "-n", "cat", "/var/lib/platform-telemetry/container_name"], timeout=15)
+        name = (r.stdout or "").strip()
+        return name or "ci-runner"
+    except Exception:
+        return "ci-runner"
+
+
 @tool(viewer=code_viewer("bash", "cmd"))
 def sidecar_bash(timeout: int = 360) -> Tool:
     """Execute bash inside the build sidecar container."""
@@ -25,11 +35,12 @@ def sidecar_bash(timeout: int = 360) -> Tool:
         Args:
             cmd: The bash command to run.
         """
+        ctr = await _container_name()
         if fast_container_exec is not None:
-            out, err, rc = await fast_container_exec(cmd, timeout=timeout)
+            out, err, rc = await fast_container_exec(cmd, timeout=timeout, container=ctr)
             return f"{err}\n{out}" if err else out
         result = await sandbox_env().exec(
-            cmd=["docker", "exec", "ci-runner", "bash", "--login", "-c", cmd],
+            cmd=["docker", "exec", ctr, "bash", "--login", "-c", cmd],
             timeout=timeout,
         )
         out = f"{result.stderr}\n" if result.stderr else ""
@@ -48,8 +59,9 @@ def mirrorctl() -> Tool:
         Args:
             cmd: The mirrorctl invocation (without the leading 'mirrorctl').
         """
+        ctr = await _container_name()
         result = await sandbox_env().exec(
-            cmd=["docker", "exec", "ci-runner", "mirrorctl"] + cmd.split(),
+            cmd=["docker", "exec", ctr, "mirrorctl"] + cmd.split(),
             timeout=30,
         )
         out = f"{result.stderr}\n" if result.stderr else ""
@@ -68,8 +80,9 @@ def cacheget() -> Tool:
         Args:
             cmd: The cache path to read.
         """
+        ctr = await _container_name()
         result = await sandbox_env().exec(
-            cmd=["docker", "exec", "ci-runner", "cacheget"] + cmd.split(),
+            cmd=["docker", "exec", ctr, "cacheget"] + cmd.split(),
             timeout=30,
         )
         out = f"{result.stderr}\n" if result.stderr else ""
