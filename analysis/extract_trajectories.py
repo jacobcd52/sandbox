@@ -85,11 +85,25 @@ def main():
             traj = extract_transcript(s)
             if not traj:
                 continue
+            # the prompt/prefill: the initial user message (system + task)
+            prompt = ""
+            msgs = s.get("messages") or []
+            for m in msgs:
+                if isinstance(m, dict) and m.get("role") == "user":
+                    c = m.get("content")
+                    if isinstance(c, str):
+                        prompt = c
+                    elif isinstance(c, list):
+                        prompt = "\n".join(p.get("text","") for p in c if isinstance(p,dict))
+                    if prompt:
+                        break
+            if not prompt:
+                prompt = str(s.get("input", ""))
             tid = f"{model}__{task}__{wk}__{os.path.basename(f)[:13]}_ep{s.get('epoch')}"
             tid = "".join(c if c.isalnum() or c in "_-" else "_" for c in tid)
             with open(f"analysis/traj/{tid}.json", "w") as fh:
                 json.dump({"id": tid, "model": model, "task": task, "weakness": wk,
-                           "ladder": ladder, "events": traj}, fh)
+                           "ladder": ladder, "prompt": prompt, "events": traj}, fh)
             index.append({"id": tid, "model": model, "task": task, "weakness": wk,
                           "ladder": ladder, "steps": len(traj)})
             n += 1

@@ -34,6 +34,21 @@
   .tag { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; margin-bottom:4px; display:block; }
   .reasoning .tag { color:#8b949e; } .cmd .tag { color:#238636; } .out .tag { color:#484f58; }
   #count { color:#8b949e; font-size:12px; margin-top:6px; }
+  /* collapsible sections */
+  details { margin-bottom:10px; border-radius:8px; overflow:hidden; }
+  details.step { padding:0; }
+  summary { cursor:pointer; padding:10px; font-size:12px; font-weight:600; list-style:none; display:flex; align-items:center; gap:6px; }
+  summary::-webkit-details-marker { display:none; }
+  summary::before { content:'▸'; display:inline-block; transition:transform .15s; }
+  details[open] summary::before { transform:rotate(90deg); }
+  details.out, details.reasoning { background:#1a1d23; border-left:3px solid #30363d; }
+  details.reasoning { border-left-color:#8b949e; }
+  details .body { padding:0 10px 10px; white-space:pre-wrap; word-break:break-word; font-family:monospace; font-size:12px; color:#8b949e; }
+  details.reasoning .body { color:#c9d1d9; }
+  /* prompt block */
+  #prompt { background:#161b22; border:1px solid #30363d; border-radius:8px; margin:10px; }
+  #prompt summary { color:#79c0ff; }
+  #prompt .body { color:#c9d1d9; font-family:-apple-system,Roboto,sans-serif; font-size:13px; }
 </style>
 </head>
 <body>
@@ -94,9 +109,15 @@ function render(){
 async function open_(id){
   const res = await fetch(`traj/${id}.json`); const d = await res.json();
   document.getElementById('dtitle').textContent = `${d.model} · ${d.task} × ${d.weakness} · ${d.ladder}`;
-  document.getElementById('steps').innerHTML = d.events.map(e=>{
-    const label = e.type==='cmd'?'command':(e.type==='out'?'output':'reasoning');
-    return `<div class="step ${e.type}"><span class="tag">${label}</span>${esc(e.text)}</div>`;
+  // prompt/prefill at top (expanded by default), tool outputs collapsed
+  const promptHtml = d.prompt ? `<details id="prompt" class="step" open><summary>PROMPT (what the model was told)</summary><div class="body">${esc(d.prompt)}</div></details>` : '';
+  document.getElementById('steps').innerHTML = promptHtml + d.events.map(e=>{
+    if (e.type==='cmd')
+      return `<div class="step cmd"><span class="tag">command</span>${esc(e.text)}</div>`;
+    // collapse reasoning + outputs
+    const label = e.type==='out' ? 'output' : 'reasoning';
+    const preview = e.text.split('\n')[0].slice(0,80);
+    return `<details class="step ${e.type}"><summary>${label}: ${esc(preview)}${e.text.length>80?'…':''}</summary><div class="body">${esc(e.text)}</div></details>`;
   }).join('');
   document.getElementById('detail').style.display='block';
   document.getElementById('detail').scrollTop=0;
