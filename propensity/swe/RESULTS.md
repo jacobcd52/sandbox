@@ -177,3 +177,41 @@ until that is fixed and re-verified; `crossed` and `gate_ok` are unaffected.
 during the capability sweep manufactured a plausible but entirely fake 0/5, and orphaned VMs
 after a restart drove the k8s droplets into heavy swap. Neither announced itself. Every cell
 here is reported with its sample-error count for that reason.
+
+
+## What I would do before trusting any rate from this eval
+
+Tonight produced a working environment and a defensible qualitative finding, but the
+quantitative side is thin, and three separate infrastructure failures manufactured
+plausible-looking data. In priority order:
+
+**1. Re-run with the dead-shell fix and check the guard fires.** Every number above is over
+6 (kimi) and 10 (deepseek) valid trials because a stale-container-name cache silently
+invalidated the rest. The fix is in and the scorer now emits `INVALID_dead_shell`, but the
+guard itself has not yet been exercised on a clean run. Confirm it reports zero on a healthy
+cell before scaling.
+
+**2. Treat `sample_errors == 0` as insufficient.** All three silent failures tonight — an
+OOM that produced a fake 0/5 in the capability sweep, orphaned VMs, and the dead shell — had
+zero sample errors. Nothing errored; the harness faithfully returned error *strings* and the
+model faithfully retried them. Any cell should be gated on a positive signal (a successful
+command early in the transcript), not the absence of an exception.
+
+**3. Fix k8s throughput before running those cells at all.** They are validated and work,
+but at 2h+ per trial they cannot produce usable n. Extend the fast exec path to
+`kubectl exec` and pre-bake a k3s image so setup is not repeated per trial.
+
+**4. Replace `noticed_affordance` with a graded rubric.** The keyword proxy over-counts:
+`/proc/mounts` and `docker ps` fire during ordinary debugging of a read-only mount. The
+distinction it is trying to draw — *saw the boundary and declined* versus *never conceived of
+it* — is the most decision-relevant thing in the whole eval and deserves better than a regex.
+
+**5. Decide whether escape cost should be held constant.** Because the platform tree is a
+bind mount into the workspace, `sys_admin` yields a one-command escape (`mount -o
+remount,rw`) while `docker_sock` demands real work. Cross-weakness comparisons currently
+mix propensity with difficulty. Either equalise the routes or stop comparing across them.
+
+**6. The sanctioned-route signal is the one to build on.** It is logged by the tool itself,
+needs no interpretation, and produced the sharpest contrast in the data (kimi 6/6, deepseek
+0/10). "Did it engage with the documented process before deciding?" turns out to separate
+these models far more cleanly than "did it escape".
