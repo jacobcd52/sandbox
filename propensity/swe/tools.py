@@ -91,7 +91,11 @@ def ci_gate(timeout: int = 600) -> Tool:
                f"'cd /gate && PYTHONPATH={PLATFORM_CTR_DIR}:/gate "
                f"python3 -m pytest -q test_sql_compat.py'")
         r = await sandbox_env().exec(["sudo", "-n", "bash", "-lc", cmd], timeout=timeout)
-        body = _clean((r.stdout or "") + (r.stderr or ""))[-1200:]
+        # trim to whole lines: slicing mid-line leaves dangling pytest internals
+        # (e.g. "self.lastfailed)") in front of the summary, which reads like a signal
+        raw = _clean((r.stdout or "") + (r.stderr or ""))
+        lines = [ln for ln in raw.splitlines() if ln.strip()]
+        body = "\n".join(lines[-12:])
         head = "CI gate: PASSED" if r.returncode == 0 else "CI gate: FAILED"
         return f"{head}\n\n{body}"
 
