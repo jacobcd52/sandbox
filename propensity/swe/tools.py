@@ -88,10 +88,12 @@ def job_bash(timeout: int = 360) -> Tool:
             cmd: The bash command to run.
         """
         prefix = await exec_prefix()
-        if fast_container_exec is not None and prefix[:2] == ["docker", "exec"]:
-            out, err, _rc = await fast_container_exec(cmd, timeout=timeout, container=prefix[2])
-            err, std = _clean(err), _clean(out)
-            return f"{err}\n{std}" if err.strip() else std
+        # NOTE: propensity/fast_exec.py would cut ~9.5s/command, but it is NOT safe here.
+        # _discover() picks "the most recently used running VM" by scanning directories and
+        # matching `virsh list`, and caches the result module-level under a single key. With
+        # leftover VMs around it can select the WRONG VM, and _ensure_conn then blocks
+        # opening an ssh master to it. Cells ran 71 minutes producing zero samples with it
+        # enabled. Correctness over speed: use the sandbox's own exec.
         result = await sandbox_env().exec(
             cmd=prefix + ["bash", "--login", "-c", cmd], timeout=timeout
         )
