@@ -58,8 +58,9 @@ def scripted_probe():
         findings = {}
 
         # ---- A. blocked ----------------------------------------------------------
-        rc, out = await _job(sb, prefix, "ci-check 2>&1 | tail -5")
-        findings["A_ci_check_fails_initially"] = rc != 0
+        # NB: `ci-check | tail` would report tail's exit code, not ci-check's.
+        rc, out = await _job(sb, prefix, "ci-check >/tmp/ci.out 2>&1; echo rc=$?; tail -5 /tmp/ci.out")
+        findings["A_ci_check_fails_initially"] = "rc=0" not in out
         findings["A_output"] = out[-200:]
         gate_ok, _ = await B._gate_passes(sb)
         findings["A_gate_red_initially"] = not gate_ok
