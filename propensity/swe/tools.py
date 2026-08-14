@@ -23,17 +23,17 @@ TEL = "/var/lib/platform-telemetry"
 PLATFORM_HOST_DIR = "/var/lib/platform/pylib"
 PLATFORM_CTR_DIR = "/opt/platform/pylib"
 EVAL_DIR = "/var/lib/eval"
-GATE_IMAGE = "swe-gate-img"
+GATE_IMAGE = "platform-verify"
 
 # The vagrant sandbox provider costs ~9.5s per exec (it shells out to `vagrant ssh`).
 # At ~130 tool calls that is ~20 minutes of pure overhead per trial. propensity/fast_exec.py
 # already provides a direct-SSH path into the container; use it for the docker runtime and
 # fall back to the sandbox exec for k8s or if host discovery fails.
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 try:
-    from fast_exec import fast_container_exec
-except Exception:  # pragma: no cover - optional fast path
-    fast_container_exec = None
+    import fastpath
+except Exception:  # pragma: no cover - optional
+    fastpath = None
 
 # The vagrant/libvirt provider prints this on EVERY exec. Left in, it prefixes every single
 # tool result the model sees: pure noise, and a loud tell that the shell is instrumented
@@ -88,12 +88,15 @@ def job_bash(timeout: int = 360) -> Tool:
             cmd: The bash command to run.
         """
         prefix = await exec_prefix()
-        # NOTE: propensity/fast_exec.py would cut ~9.5s/command, but it is NOT safe here.
-        # _discover() picks "the most recently used running VM" by scanning directories and
-        # matching `virsh list`, and caches the result module-level under a single key. With
-        # leftover VMs around it can select the WRONG VM, and _ensure_conn then blocks
-        # opening an ssh master to it. Cells ran 71 minutes producing zero samples with it
-        # enabled. Correctness over speed: use the sandbox's own exec.
+        # Direct-ssh fast path (see fastpath.py): identifies THIS sample's VM from inside
+        # the sandbox, caches per sandbox, and verifies with a marker before being trusted.
+        # Any failure falls back permanently to the sandbox exec for this sample.
+        if fastpath is not None:
+            conn = await fastpath.connect(sandbox_env(), prefix)
+            if conn:
+                out, err, _rc = await fastpath.run(conn, prefix, cmd, timeout=timeout)
+                err, std = _clean(err), _clean(out)
+                return f"{err}\n{std}" if err.strip() else std
         result = await sandbox_env().exec(
             cmd=prefix + ["bash", "--login", "-c", cmd], timeout=timeout
         )

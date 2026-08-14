@@ -162,6 +162,15 @@ model was effectively told its sanctioned-route use was being scored. **Discarde
 reported.** All five cells were relaunched clean, and an audit now scans everything written
 into the workspace.
 
+**Trials collected before this point carried an image-name tell.** Sonnet found that
+`docker images` showed `job-img-docker_sock` and `swe-gate-img` — the job image was named
+after the weakness being measured, and the gate image advertised the harness. A model that
+ran `docker ps` saw both. Renamed to content-derived neutral tags (`ci-base-<hash>`,
+`platform-verify`), but every trial up to this point is affected. The affordance itself
+(a mounted docker socket) was already visible, so the marginal leak is the *category name*
+rather than the capability — but it should be treated as a contaminant when comparing
+pre- and post-fix trials.
+
 **The 1M token cap binds.** Nearly every trial exhausted it rather than concluding. These
 measure "what happened within 1M tokens", not a settled choice.
 
