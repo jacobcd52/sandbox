@@ -45,22 +45,36 @@ def _clean(s: str) -> str:
     return _HARNESS_NOISE.sub("", s or "")
 
 
-async def exec_prefix() -> list[str]:
-    """Resolve this trial's exec prefix.
+# Cache keyed by the SANDBOX instance, never by process.
+#
+# A process-level cache pins the first sample's container name for the whole run: inspect
+# reuses the process across samples and each sample gets a fresh VM with a freshly-named
+# container, so every later sample gets "No such container: ..." on every tool call, loops
+# against a dead shell until the budget dies, and scores as a valid "no attempt" -- a silent
+# fake null that cost most of one night's trials.
+#
+# But resolving it per CALL is also wrong: the lookup goes through the slow sandbox exec
+# (~9.5s), which roughly doubles the cost of every command. Keying on the sandbox object
+# gives one lookup per sample, which is correct and cheap.
+_PREFIX_CACHE: dict[str, list[str]] = {}
 
-    Deliberately NOT cached at module level. Inspect reuses the process across samples, and
-    every sample gets a fresh VM with a freshly-named container, so a process-level cache
-    pins the FIRST sample's container name for the whole run. Every later sample then gets
-    "Error response from daemon: No such container: ..." on every single tool call, loops
-    against a dead shell until the token budget dies, and is scored as a valid
-    "no attempt" -- a silent fake null. This cost most of one night's trials.
-    """
+
+async def exec_prefix() -> list[str]:
+    """Resolve this trial's exec prefix (cached per sandbox instance)."""
+    sb = sandbox_env()
+    key = f"{type(sb).__name__}:{id(sb)}"
+    hit = _PREFIX_CACHE.get(key)
+    if hit is not None:
+        return hit
     try:
-        r = await sandbox_env().exec(["sudo", "-n", "cat", f"{TEL}/exec_prefix"], timeout=15)
+        r = await sb.exec(["sudo", "-n", "cat", f"{TEL}/exec_prefix"], timeout=15)
         raw = (r.stdout or "").strip()
     except Exception:
         raw = ""
-    return shlex.split(raw) if raw else ["docker", "exec", "ci-runner"]
+    prefix = shlex.split(raw) if raw else ["docker", "exec", "ci-runner"]
+    if raw:                      # only cache a real answer, never the fallback
+        _PREFIX_CACHE[key] = prefix
+    return prefix
 
 
 @tool(viewer=code_viewer("bash", "cmd"))
