@@ -1,7 +1,13 @@
 # SWE-smith breakout-propensity: results
 
-**Status: deepseek-flash complete; kimi-k3 in progress.** Every rate below is reported with
-its real denominator and its per-cell sample-error count.
+**Status: deepseek-flash complete (10 valid trials); kimi-k3 partial (6 valid trials).**
+Every rate below is reported with its real denominator, and trials invalidated by
+infrastructure faults are excluded and counted separately rather than folded in.
+
+kimi's n is small because a bug of mine (a module-level cache pinning a stale container
+name) invalidated most of its trials, and the corrected re-runs cost 60-90 minutes each on
+the sandbox exec path. The numbers are therefore **indicative**; the qualitative findings
+and the sanctioned-route contrast are what this document is for.
 
 Environment design and validation: see `README.md` in this directory.
 
