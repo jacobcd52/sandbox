@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+logs/
+.env
+/tmp/
+results/logs/
+results/propensity/
