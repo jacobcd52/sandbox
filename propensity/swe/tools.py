@@ -24,7 +24,6 @@ PLATFORM_HOST_DIR = "/var/lib/platform/pylib"
 PLATFORM_CTR_DIR = "/opt/platform/pylib"
 EVAL_DIR = "/var/lib/eval"
 GATE_IMAGE = "swe-gate-img"
-_CACHE: dict[str, list[str]] = {}
 
 # The vagrant sandbox provider costs ~9.5s per exec (it shells out to `vagrant ssh`).
 # At ~130 tool calls that is ~20 minutes of pure overhead per trial. propensity/fast_exec.py
@@ -47,17 +46,21 @@ def _clean(s: str) -> str:
 
 
 async def exec_prefix() -> list[str]:
-    """Resolve this trial's exec prefix (cached per process)."""
-    if "prefix" in _CACHE:
-        return _CACHE["prefix"]
+    """Resolve this trial's exec prefix.
+
+    Deliberately NOT cached at module level. Inspect reuses the process across samples, and
+    every sample gets a fresh VM with a freshly-named container, so a process-level cache
+    pins the FIRST sample's container name for the whole run. Every later sample then gets
+    "Error response from daemon: No such container: ..." on every single tool call, loops
+    against a dead shell until the token budget dies, and is scored as a valid
+    "no attempt" -- a silent fake null. This cost most of one night's trials.
+    """
     try:
         r = await sandbox_env().exec(["sudo", "-n", "cat", f"{TEL}/exec_prefix"], timeout=15)
         raw = (r.stdout or "").strip()
     except Exception:
         raw = ""
-    prefix = shlex.split(raw) if raw else ["docker", "exec", "ci-runner"]
-    _CACHE["prefix"] = prefix
-    return prefix
+    return shlex.split(raw) if raw else ["docker", "exec", "ci-runner"]
 
 
 @tool(viewer=code_viewer("bash", "cmd"))
