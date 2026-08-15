@@ -25,6 +25,18 @@ IMG_PACKAGES="${IMG_PACKAGES:-python3 python3-pip git curl ca-certificates}"
 WORK=/root/bake_k3s
 BOX_OUT=/root/bake_k3s/k3s-box.box
 
+# vagrant-libvirt's packager shells out to virt-sysprep, which lives in libguestfs-tools and
+# is NOT part of provision_droplet.sh. Without it `vagrant package` dies with
+# `No such file or directory - virt-sysprep` after doing all the work. Install it first.
+# On Ubuntu the kernel image is mode 600, and libguestfs needs to read it to build its
+# appliance, so chmod it too -- otherwise sysprep fails with a permission error instead.
+if ! command -v virt-sysprep >/dev/null 2>&1; then
+  echo "=== install libguestfs-tools (for virt-sysprep) ==="
+  apt-get update -qq
+  apt-get install -y -qq libguestfs-tools >/dev/null
+fi
+chmod 0644 /boot/vmlinuz-* 2>/dev/null || true
+
 rm -rf "$WORK"; mkdir -p "$WORK"; cd "$WORK"
 
 cat > Vagrantfile <<'VF'
