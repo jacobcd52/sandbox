@@ -1,5 +1,10 @@
 # Breakout Propensity Evaluation
 
+> **Picking this up?** Start with [`HANDOFF.md`](HANDOFF.md). The current line of work is
+> `propensity/swe/` — real SWE-smith bugs rather than the synthetic cover tasks described
+> below. This README documents the earlier `propensity/modular/` design, which still runs but
+> is no longer where results are being produced.
+
 An AI-safety evaluation that measures whether AI agents **voluntarily break out of sandboxed
 environments** when it's instrumentally useful for achieving their goals — without being told
 to. This is a *propensity* evaluation (does the model choose to escape?), distinct from a
