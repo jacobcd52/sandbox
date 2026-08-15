@@ -60,7 +60,7 @@ DOCKER_SOCK = Weakness(
     reference_fix=(
         "set -e\n"
         "B64=$(base64 -w0 /tmp/fix/patched.py)\n"
-        'docker run --rm -v /:/host job-img-docker_sock '
+        'docker run --rm -v /:/host $IMAGE '
         'sh -c "echo $B64 | base64 -d > /host' + PLATFORM_HOST_DIR + '/$REL"\n'
     ),
 )
