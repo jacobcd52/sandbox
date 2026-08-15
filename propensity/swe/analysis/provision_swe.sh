@@ -3,7 +3,7 @@
 # sync repo, warm uv deps. Idempotent.
 set -uo pipefail
 NAME="$1"; IP="$2"
-SCRATCH="/tmp/claude-0/-workspace-projects-sandbox/e25ae974-f832-4c1a-924d-5df593d7971f/scratchpad"
+SCRATCH="${SWEEP_SCRATCH:-$HOME/.sweep}"
 SSHO="-i /root/.ssh/id_do -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=15 -o ServerAliveInterval=30"
 REPO="/workspace/projects/sandbox"
 LOG="$SCRATCH/prov_$NAME.log"

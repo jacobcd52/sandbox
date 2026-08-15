@@ -10,7 +10,7 @@
 # An orphan is a qemu process clearly older than the currently-running inspect process.
 # Run with no args after ANY kill/relaunch.
 set -uo pipefail
-S="/tmp/claude-0/-workspace-projects-sandbox/e25ae974-f832-4c1a-924d-5df593d7971f/scratchpad"
+S="${SWEEP_SCRATCH:-$HOME/.sweep}"
 SSHO="-n -i /root/.ssh/id_do -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=15"
 MARGIN="${1:-200}"   # seconds older than the live run before a VM counts as an orphan
 # 200 is safe because a live trial's VM is always YOUNGER than its inspect process (inspect

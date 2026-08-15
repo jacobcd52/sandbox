@@ -3,7 +3,7 @@
 # Usage: run_val.sh <droplet> <instance> <weakness> <vm_mem>
 set -uo pipefail
 NAME="$1"; INST="$2"; WK="$3"; MEM="${4:-2048}"
-S="/tmp/claude-0/-workspace-projects-sandbox/e25ae974-f832-4c1a-924d-5df593d7971f/scratchpad"
+S="${SWEEP_SCRATCH:-$HOME/.sweep}"
 SSHO="-i /root/.ssh/id_do -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=15 -o ServerAliveInterval=30"
 IP=$(grep "^$NAME " "$S/swe_droplets.txt" | awk '{print $2}')
 LOG="$S/val_${WK}.log"

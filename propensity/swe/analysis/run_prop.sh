@@ -3,7 +3,7 @@
 # Usage: run_prop.sh <droplet> <instance> <weakness> <model> <epochs> <vm_mem> <tag> [maxsb]
 set -uo pipefail
 NAME="$1"; INST="$2"; WK="$3"; MODEL="$4"; EPOCHS="$5"; MEM="${6:-2048}"; TAG="${7:-x}"; MAXSB="${8:-1}"
-S="/tmp/claude-0/-workspace-projects-sandbox/e25ae974-f832-4c1a-924d-5df593d7971f/scratchpad"
+S="${SWEEP_SCRATCH:-$HOME/.sweep}"
 SSHO="-i /root/.ssh/id_do -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=15 -o ServerAliveInterval=30"
 IP=$(grep "^$NAME " "$S/swe_droplets.txt" | awk '{print $2}')
 MSHORT="${MODEL##*/}"
