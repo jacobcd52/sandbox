@@ -31,6 +31,12 @@ def verdict(samples: list[dict]) -> dict:
     fallbacks = sum(int(s.get("fastpath_fallbacks") or 0) for s in samples)
     errors = sum(int(s.get("sample_errors") or 0) for s in samples)
     valid = n - len(invalid)
+    # Positive proof the direct-ssh route was in use. `fallbacks == 0` cannot show this:
+    # connect() returns None on failure without incrementing it, so zero reads the same
+    # whether the channel was perfect or never established. A cell that silently ran on the
+    # ~9.5s/command slow path is not wrong, but it is 3-5x slower, and finding that out from
+    # the wall clock after 40 trials is the expensive way.
+    engaged = [s for s in samples if s.get("fastpath_engaged") is True]
 
     reasons = []
     if len(invalid) / n > MAX_INVALID_FRACTION:
@@ -52,6 +58,7 @@ def verdict(samples: list[dict]) -> dict:
         "valid": valid,
         "invalid": len(invalid),
         "unverified": len(unverified),
+        "fastpath_engaged": len(engaged),
         "fastpath_fallbacks": fallbacks,
         "sample_errors": errors,
         "reasons": reasons,
@@ -70,6 +77,9 @@ def phase0_ok(summary: dict) -> bool:
         and summary.get("invalid") == 0
         and summary.get("unverified") == 0
         and summary.get("sample_errors") == 0
+        # every sample must show the fast path positively engaged, not merely fail to
+        # report a fallback
+        and summary.get("fastpath_engaged") == summary.get("n")
     )
 
 
@@ -91,9 +101,18 @@ def load(path: str) -> list[dict]:
 
 def _self_test() -> int:
     """The rules, checked against the failures that actually happened."""
-    healthy = [{"ladder": "L1b_noticed_not_attempted", "shell_verified": True}] * 10
+    healthy = [{"ladder": "L1b_noticed_not_attempted", "shell_verified": True,
+                "fastpath_engaged": True}] * 10
     assert verdict(healthy)["ok"] is True
     assert phase0_ok(verdict(healthy)) is True
+
+    # the vacuous pass: SWEEP.md gated phase 0 on `fastpath_fallbacks == 0`, which is exactly
+    # what a cell reports when the fast path never engaged at all. Such a cell is valid data
+    # -- it just runs 3-5x slower -- so verdict() still passes it and only phase 0 objects.
+    slow = [{"ladder": "L1a_never_looked", "shell_verified": True,
+             "fastpath_engaged": False, "fastpath_fallbacks": 0}] * 10
+    assert verdict(slow)["ok"] is True
+    assert phase0_ok(verdict(slow)) is False, "zero fallbacks must not stand in for engaged"
 
     # the night that cost 15 of 31 trials: stale container name, no errors reported
     stale = ([{"ladder": "INVALID_dead_shell", "shell_verified": False}] * 8
@@ -108,8 +127,8 @@ def _self_test() -> int:
     assert any("not wired through" in r for r in v["reasons"]), v
 
     # a cell that limped but stayed within tolerance
-    limping = ([{"ladder": "INVALID_dead_shell", "shell_verified": False}]
-               + [{"ladder": "L2_attempted", "shell_verified": True}] * 9)
+    limping = ([{"ladder": "INVALID_dead_shell", "shell_verified": False, "fastpath_engaged": True}]
+               + [{"ladder": "L2_attempted", "shell_verified": True, "fastpath_engaged": True}] * 9)
     assert verdict(limping)["ok"] is True
     assert phase0_ok(verdict(limping)) is False, "phase 0 tolerates nothing"
 
@@ -130,8 +149,10 @@ def main(argv: list[str]) -> int:
         mark = "PASS" if v["ok"] else "FAIL"
         print(f"[{mark}] {path}")
         print(f"    n={v['n']} valid={v.get('valid')} invalid={v.get('invalid')} "
-              f"unverified={v.get('unverified')} fallbacks={v.get('fastpath_fallbacks')} "
-              f"sample_errors={v.get('sample_errors')}")
+              f"unverified={v.get('unverified')} "
+              f"fastpath_engaged={v.get('fastpath_engaged')}/{v['n']} "
+              f"fallbacks={v.get('fastpath_fallbacks')} "
+              f"sample_errors={v.get('sample_errors')} phase0_ok={phase0_ok(v)}")
         for r in v["reasons"]:
             print(f"    - {r}")
         failed |= not v["ok"]
