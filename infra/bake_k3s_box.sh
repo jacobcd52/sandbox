@@ -91,6 +91,36 @@ rm -rf /var/lib/rancher/k3s/server /var/lib/rancher/k3s/agent/client-* 2>/dev/nu
 echo "BAKE_INNER_OK k3s=\$(command -v k3s) docker=\$(command -v docker)"
 INNER
 
+# Make sure the guest authorises every key a later `vagrant up` might offer -- by APPENDING,
+# never replacing.
+#
+# vagrant-libvirt's packager bundles THIS machine's private key into the box and writes a box
+# Vagrantfile pointing `config.ssh.private_key_path` at it, so a VM created from the box
+# authenticates with that key, not with the insecure default. Overwriting authorized_keys
+# with the insecure keys therefore deletes the one key the box actually ships and makes every
+# VM from it unreachable -- and unreachable fails by hanging to the sandbox setup timeout,
+# not by erroring. Appending keeps the bundled key working and adds the insecure keys as a
+# fallback for anything that offers them instead.
+echo "=== authorise the machine key + insecure keys in the guest ==="
+PUBS=$(for k in "$WORK"/.vagrant/machines/*/libvirt/private_key \
+                "$HOME"/.vagrant.d/insecure_private_key \
+                "$HOME"/.vagrant.d/insecure_private_keys/*; do
+         [ -f "$k" ] && ssh-keygen -y -f "$k" 2>/dev/null
+       done)
+[ -z "$PUBS" ] && { echo "no vagrant keys found -- refusing to package an unreachable box" >&2; exit 1; }
+vagrant ssh -c 'sudo bash -s' <<INNERKEY
+set -e
+install -d -m 0700 -o vagrant -g vagrant /home/vagrant/.ssh
+touch /home/vagrant/.ssh/authorized_keys
+cat >> /home/vagrant/.ssh/authorized_keys <<'PUBEOF'
+$PUBS
+PUBEOF
+sort -u -o /home/vagrant/.ssh/authorized_keys /home/vagrant/.ssh/authorized_keys
+chown vagrant:vagrant /home/vagrant/.ssh/authorized_keys
+chmod 0600 /home/vagrant/.ssh/authorized_keys
+echo "authorized_keys now:"; cut -d' ' -f1,3 /home/vagrant/.ssh/authorized_keys
+INNERKEY
+
 echo "=== package the box ==="
 vagrant package --output "$BOX_OUT" 2>&1 | tail -3
 ls -lh "$BOX_OUT"
