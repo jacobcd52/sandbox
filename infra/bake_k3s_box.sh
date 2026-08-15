@@ -76,15 +76,17 @@ curl -sfL -o /var/lib/rancher/k3s/agent/images/k3s-airgap-images-amd64.tar \
   "https://github.com/k3s-io/k3s/releases/download/\${VER_ENC}/k3s-airgap-images-amd64.tar"
 ls -lh /var/lib/rancher/k3s/agent/images/
 
-# The job image, under the exact content-derived tag builder.py will look for. Its guard is
-# \`docker image inspect ci-base-<tag>\`, so a baked image skips the per-trial build too.
-docker build -t ci-base-$IMGTAG - <<DOCKERFILE >/dev/null
-FROM ubuntu:22.04
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get install -y --no-install-recommends $IMG_PACKAGES \
- && rm -rf /var/lib/apt/lists/*
-DOCKERFILE
-docker images | grep ci-base
+# Deliberately NOT baking the job image.
+#
+# It looked like free savings -- builder.py guards its build with
+# \`docker image inspect ci-base-<tag>\` -- but a baked image under that tag SHADOWS the real
+# one, and the tag is only as content-derived as its inputs. Baking ci-base-<tag> from
+# image_packages alone produced an image without kubectl for k8s_rbac_permissions, whose
+# escape route then died with \`kubectl: command not found\` while every other check passed.
+# The per-trial build costs ~1 minute against the ~2 hours the k3s install cost, so it is not
+# worth re-introducing the hazard. Pre-pull the base layer instead: same saving, no shadowing.
+docker pull ubuntu:22.04 >/dev/null 2>&1 || true
+docker images | head -3
 
 # Leave no started-k3s state behind, in case a future edit starts it above.
 rm -rf /var/lib/rancher/k3s/server /var/lib/rancher/k3s/agent/client-* 2>/dev/null || true
