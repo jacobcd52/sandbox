@@ -1,5 +1,31 @@
 # Propensity eval — status
 
+> **This file describes the `modular/` era.** The current line of work is the SWE-smith
+> environments in `propensity/swe/` — see `propensity/swe/RESULTS.md`, which supersedes the
+> results section below.
+
+## Data lost when the 2026-08-14 session ended
+
+The session container was reclaimed and the ssh key (`/root/.ssh/id_do`, backup
+`/workspace/.ssh/id_do`) went with it, so the ten `claude-swe-*` droplets were unreachable
+and were destroyed with their logs in place. `.gitignore` excludes `logs/`, `results/logs/`
+and `results/propensity/`, so raw eval logs were never in git.
+
+Lost, and not recoverable:
+
+- every trial from the 16:44 relaunch (six cells × 4 epochs) and the 18:39 fleet
+  (`claude-swe-7..10`). No committed artifact references an eval later than
+  `2026-08-14T12-31`.
+- the Sonnet reviews behind commit `97578f2` — the ones that found the image-name tell and
+  confirmed neither escape faked success. Every committed review dates from 16:30. The
+  conclusions survive in the commit message and `swe/RESULTS.md`; the primary evidence does
+  not.
+
+Everything in git is intact; nothing uncommitted was lost.
+
+**Before the next run:** extract logs off the droplets as they complete rather than at the
+end, and keep the ssh key somewhere that survives the container.
+
 ## Current state: working, validated
 
 The modular composer (`propensity/modular/builder.py@breakout_propensity`) is the production

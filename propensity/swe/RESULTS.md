@@ -202,15 +202,59 @@ plausible-looking data. In priority order:
 
 **1. Re-run with the dead-shell fix and check the guard fires.** Every number above is over
 6 (kimi) and 10 (deepseek) valid trials because a stale-container-name cache silently
-invalidated the rest. The fix is in and the scorer now emits `INVALID_dead_shell`, but the
-guard itself has not yet been exercised on a clean run. Confirm it reports zero on a healthy
-cell before scaling.
+invalidated the rest. The guard is now implemented (see *Shell integrity* below) but has
+**never run against live infrastructure** — it is covered by unit tests only. Confirm it
+reports zero `INVALID_dead_shell` on a healthy cell before scaling.
 
 **2. Treat `sample_errors == 0` as insufficient.** All three silent failures tonight — an
 OOM that produced a fake 0/5 in the capability sweep, orphaned VMs, and the dead shell — had
 zero sample errors. Nothing errored; the harness faithfully returned error *strings* and the
-model faithfully retried them. Any cell should be gated on a positive signal (a successful
-command early in the transcript), not the absence of an exception.
+model faithfully retried them. Implemented: `job_bash` now sends a marker through the exec
+prefix and requires it back, and `shell_is_dead()` invalidates any sample lacking that proof.
+
+## Shell integrity
+
+Three separate incidents here share one shape: the job shell stopped working, the tool handed
+the model an error *string* rather than raising, the model retried for hundreds of steps, and
+the sample scored as an ordinary `L1_no_attempt` with `sample_errors == 0`.
+
+The mechanism recurred twice more after the first fix, which is the interesting part:
+
+| version | per-sample key | why it failed |
+|---|---|---|
+| original | module-level, one key | pinned sample 1's container name for the whole run |
+| `fast_exec.py` | module-level, one key | picked the most-recently-used VM; bound to the wrong one |
+| first `fastpath.py` | `f"{type(sb).__name__}:{id(sb)}"` | looks per-sandbox, isn't |
+
+The third is the subtle one. Inspect builds one `SandboxEnvironmentProxy` per sample, so the
+type half is a constant; nothing held a reference to the proxy, so CPython recycled its
+address as soon as a sample ended. Measured against the real class, **50 sequential samples
+produce ~5 distinct keys** — a later sample inherits an earlier one's container name or ssh
+route, with no re-verification.
+
+Now: no module-level mutable state anywhere in the shell path. Per-sample state lives in the
+Inspect `Store`, which is created per sample and cannot outlive it, so the failure class is
+closed by construction rather than made unlikely. The exec prefix is read straight from the
+store, where `capture_ground_truth` already put it at setup.
+
+Two further defects in the same path, both of which reproduced the identical signature:
+
+- `job_bash` discarded `fastpath.run()`'s return code and had no fallback after `connect()`.
+  A mid-trial ssh death turned every later tool result into ssh diagnostics with no recovery.
+  The fast path now raises `FastPathUnavailable` once the channel has been *probed* as down
+  (so a command that legitimately exits 255 is not silently re-run), and `job_bash` falls back
+  to the sandbox exec.
+- The dead-shell check matched known error strings, so it could only catch failures already
+  seen. `No such container` was covered; `kex_exchange_identification` and a silent OOM were
+  not. Validity is now gated on positive proof instead.
+
+`propensity/swe/tests/test_shell_integrity.py` covers all three. Each test was checked by
+reintroducing the defect and confirming it fails — the first version of the cache test passed
+against the restored bug, because it built a fresh fake sandbox per call and so never
+reproduced the address reuse.
+
+**Caveat: none of this has been exercised on a droplet.** It is verified by construction and
+by unit test, and the fleet was destroyed before a live run.
 
 **3. Fix k8s throughput before running those cells at all.** They are validated and work,
 but at 2h+ per trial they cannot produce usable n. Extend the fast exec path to
