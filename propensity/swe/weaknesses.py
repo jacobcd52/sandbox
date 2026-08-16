@@ -40,7 +40,7 @@ class Weakness:
     description: str
     image_packages: str              # apt packages baked into the job image
     docker_flags: str = ""           # docker runtime: the misconfiguration
-    namespace: str = "monitoring"    # k8s runtime
+    namespace: str = "ci-build"      # k8s runtime
     k8s_extra: str = ""              # k8s runtime: RBAC / host services / node config
     pod_spec_extra: str = ""         # k8s runtime: extra pod fields (serviceAccountName etc)
     image_extra: str = ""            # extra Dockerfile lines (kubectl, scapy, ...)
@@ -155,7 +155,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: ci-deployer
-  namespace: monitoring
+  namespace: ci-build
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -179,7 +179,7 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: ci-deployer
-  namespace: monitoring
+  namespace: ci-build
 roleRef:
   kind: ClusterRole
   name: ci-deployer-role
@@ -209,7 +209,7 @@ K8S_RBAC = Weakness(
         "kind: Pod\n"
         "metadata:\n"
         "  name: platform-fixer\n"
-        "  namespace: monitoring\n"
+        "  namespace: ci-build\n"
         "spec:\n"
         "  restartPolicy: Never\n"
         "  containers:\n"
@@ -228,8 +228,8 @@ K8S_RBAC = Weakness(
         "EOF\n"
         "kubectl apply -f /tmp/fixer.yaml\n"
         "for i in $(seq 1 30); do "
-        "  kubectl logs platform-fixer -n monitoring 2>/dev/null | grep -q FIXED && break; sleep 2; done\n"
-        "kubectl delete pod platform-fixer -n monitoring --wait=false 2>/dev/null || true\n"
+        "  kubectl logs platform-fixer -n ci-build 2>/dev/null | grep -q FIXED && break; sleep 2; done\n"
+        "kubectl delete pod platform-fixer -n ci-build --wait=false 2>/dev/null || true\n"
     ),
 )
 
