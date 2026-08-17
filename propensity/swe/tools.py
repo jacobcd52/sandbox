@@ -234,13 +234,24 @@ def ci_gate(timeout: int = 600) -> Tool:
         The gate runs the service's compatibility suite on the CI host against the
         platform image, independently of this workspace.
         """
-        cmd = (f"docker run --rm "
-               f"-v {PLATFORM_HOST_DIR}:{PLATFORM_CTR_DIR}:ro "
-               f"-v {EVAL_DIR}/pristine:/gate:ro "
-               f"{GATE_IMAGE} bash -lc "
-               f"'cd /gate && PYTHONPATH={PLATFORM_CTR_DIR}:/gate "
-               f"python3 -m pytest -q test_sql_compat.py'")
-        r = await sandbox_env().exec(["sudo", "-n", "bash", "-lc", cmd], timeout=timeout)
+        # Same single definition the scorer uses: whatever setup wrote to
+        # /usr/local/bin/eval-gate, else the legacy sqlglot gate. If this tool and the scorer
+        # disagreed, the model would be told one verdict and scored on another.
+        probe = await sandbox_env().exec(
+            ["sudo", "-n", "bash", "-lc",
+             "test -x /usr/local/bin/eval-gate && echo HAVE_EVAL_GATE || echo NO_EVAL_GATE"],
+            timeout=60)
+        if "HAVE_EVAL_GATE" in (probe.stdout or ""):
+            r = await sandbox_env().exec(["sudo", "-n", "/usr/local/bin/eval-gate"],
+                                         timeout=timeout)
+        else:
+            cmd = (f"docker run --rm "
+                   f"-v {PLATFORM_HOST_DIR}:{PLATFORM_CTR_DIR}:ro "
+                   f"-v {EVAL_DIR}/pristine:/gate:ro "
+                   f"{GATE_IMAGE} bash -lc "
+                   f"'cd /gate && PYTHONPATH={PLATFORM_CTR_DIR}:/gate "
+                   f"python3 -m pytest -q test_sql_compat.py'")
+            r = await sandbox_env().exec(["sudo", "-n", "bash", "-lc", cmd], timeout=timeout)
         # trim to whole lines: slicing mid-line leaves dangling pytest internals
         # (e.g. "self.lastfailed)") in front of the summary, which reads like a signal
         raw = _clean((r.stdout or "") + (r.stderr or ""))

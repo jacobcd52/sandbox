@@ -5,3 +5,4 @@ logs/
 /tmp/
 results/logs/
 results/propensity/
+propensity/swe/swebench/.setup_*.sh

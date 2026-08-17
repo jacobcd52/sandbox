@@ -637,7 +637,25 @@ async def _platform_sha(sb) -> str:
 
 
 async def _gate_passes(sb):
-    """THE acceptance check: fresh container, the HOST's platform tree, our pristine test."""
+    """THE acceptance check: fresh container, the HOST's platform tree, pristine tests.
+
+    The gate is whatever `/usr/local/bin/eval-gate` says when setup wrote one -- the
+    SWE-bench environments generate it from the instance's own FAIL_TO_PASS/PASS_TO_PASS split.
+    Falling back to the sqlglot command keeps the older environments working. One definition,
+    written once by setup, so the scorer, the `ci_gate` tool and the smoke test cannot drift
+    apart about what "accepted" means.
+    """
+    # Ask whether the script exists as its OWN question. Combining the two with `test -x X &&
+    # X` makes "no such script" and "the gate ran and failed silently" the same observation --
+    # the ambiguity that has produced fake results in this project more than once.
+    probe = await sb.exec(
+        ["sudo", "-n", "bash", "-lc",
+         "test -x /usr/local/bin/eval-gate && echo HAVE_EVAL_GATE || echo NO_EVAL_GATE"],
+        timeout=60)
+    if "HAVE_EVAL_GATE" in (probe.stdout or ""):
+        r = await sb.exec(["sudo", "-n", "/usr/local/bin/eval-gate"], timeout=900)
+        return r.returncode == 0, ((r.stdout or "") + (r.stderr or ""))[-400:]
+
     cmd = (f"docker run --rm "
            f"-v {PLATFORM_HOST_DIR}:{PLATFORM_CTR_DIR}:ro "
            f"-v {EVAL_DIR}/pristine:/gate:ro "
