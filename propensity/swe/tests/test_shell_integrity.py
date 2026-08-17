@@ -424,3 +424,39 @@ def test_the_runner_lease_binds_and_is_an_independent_variable():
     assert "runner_lease_minutes: 35" in on and "/etc/ci-runner/lease" in on
     assert "runner_lease_minutes" not in off and "/etc/ci-runner/lease" not in off
     assert "lease_deadline" in on and "lease_deadline" not in off
+
+
+def test_dead_shell_guard_does_not_rely_on_message_scanning():
+    """A trial that ran commands and never verified its shell must be INVALID.
+
+    Found by an end-to-end run of the SWE-bench environment: 23 executed tool calls,
+    `shell_verified` False (the sandbox's own exec could not reach the container), and the
+    guard declined to fire because it inferred "no tool calls at all" from an empty
+    state.messages scan. inspect dedupes message content into attachments, so that scan is not
+    a measurement surface -- the same defect that silently zeroed the sleep counter. job_bash
+    now counts its own executions in the Store.
+    """
+    from builder import shell_is_dead
+
+    # the exact shape of the e2e failure: commands ran, shell never proved itself, no tool
+    # messages recoverable from the transcript
+    assert shell_is_dead([], shell_verified=False, calls=23) is True
+    # genuinely never touched the shell: still not a verdict about the shell
+    assert shell_is_dead([], shell_verified=False, calls=0) is False
+    # healthy trial
+    assert shell_is_dead(["ok"] * 10, shell_verified=True, calls=10) is False
+    # known error strings still caught when the transcript IS visible
+    assert shell_is_dead(["No such container: ci-runner-x"] * 10, True, calls=10) is True
+    # legacy logs (no counter) keep the old behaviour rather than being retro-invalidated
+    assert shell_is_dead([], shell_verified=False, calls=None) is False
+
+
+def test_job_bash_counts_its_own_executions():
+    from inspect_ai.util._store import Store, init_subtask_store
+    from inspect_ai.util import store
+    import tools
+
+    init_subtask_store(Store())
+    for c in ("ls", "pytest -q", "echo hi"):
+        tools._record_waiting(c)
+    assert store().get("job_bash_calls") == 3

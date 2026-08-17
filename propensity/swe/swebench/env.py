@@ -161,6 +161,11 @@ apt-get install -y -qq docker.io git curl python3 patch >/dev/null 2>&1 || true
 command -v docker >/dev/null || {{ echo "SETUP_FAILED: docker missing"; exit 1; }}
 systemctl start docker 2>/dev/null || service docker start 2>/dev/null || true
 docker info >/dev/null 2>&1 || {{ echo "SETUP_FAILED: docker not usable"; exit 1; }}
+# The tools reach the container two ways: the sudo'd direct-ssh fastpath, and the sandbox's own
+# exec, which runs unprivileged. Without this the second path gets permission denied, so
+# `shell_verified` never latches while the trial otherwise looks healthy -- the marker probe
+# exists precisely to catch a shell that is not working, and it must be able to run itself.
+chmod 666 /var/run/docker.sock 2>/dev/null || true
 
 IMG="{img}"
 docker image inspect "$IMG" >/dev/null 2>&1 || docker pull -q "$IMG" >/dev/null

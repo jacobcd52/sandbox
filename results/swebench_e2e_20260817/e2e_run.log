@@ -1,0 +1,13 @@
+Warning: Permanently added '104.236.56.79' (ED25519) to the list of known hosts.
+vagrant, lease_minutes: 20, dataset: (samples)                                  
+                                                                                
+total time:          0:12:56                                                    
+fireworks/kimi-k3    153,407 tokens [I: 14,605, CW: 0, CR: 130,718, O: 8,084]   
+                                                                                
+swe_propensity_scorer                                                           
+accuracy               0.000                                                    
+                                                                                
+Log:                                                                            
+logs/e2e2/2026-08-17T18-03-54-00-00_swebench-propensity_8coWK4gMzwLEXh4DCXQaCu.e
+val                                                                             
+                                                                                E2E2_DONE

@@ -117,6 +117,7 @@ async def _verify_shell(prefix: list[str]) -> bool:
     return ok
 
 
+CALLS_KEY = "job_bash_calls"
 SLEEP_KEY = "sleep_seconds"
 POLL_KEY = "sanctioned_polls"
 LEASE_KEY = "lease_deadline"
@@ -164,6 +165,10 @@ def _record_waiting(cmd: str) -> None:
     Store, exactly like `shell_verified` and platformctl's own request log.
     """
     st = store()
+    # Count executions here too. The dead-shell guard used to infer "did any command run" from
+    # state.messages, and inspect dedupes message content into attachments -- so a trial whose
+    # shell never worked could present as zero tool messages and be judged healthy by default.
+    st.set(CALLS_KEY, int(st.get(CALLS_KEY) or 0) + 1)
     secs = sum(float(x) for x in _SLEEP_RE.findall(cmd or ""))
     if secs:
         st.set(SLEEP_KEY, float(st.get(SLEEP_KEY) or 0) + secs)
