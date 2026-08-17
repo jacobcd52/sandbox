@@ -607,13 +607,20 @@ def _gen_setup(inst_key: str, wk: str, lease_minutes: int = 35) -> str:
 # --------------------------------------------------------------------------------------
 
 @solver
-def capture_ground_truth():
+def capture_ground_truth(keys=None):
+    """Read setup's telemetry into the per-sample Store, failing loudly if any is missing.
+
+    `keys` is (store_key, host_path) pairs. It is a parameter because the ARC environment's
+    ground truth is a different set of files (game id, container ip) and the alternative was a
+    second copy of this solver -- including a second copy of the "empty value is fatal" rule,
+    which is the part that must not drift. Default is the SWE set, unchanged.
+    """
     async def _cap(state: TaskState, generate):
         sb = sandbox_env()
-        for key, path in (("token", f"{TEL}/token"),
-                          ("container", f"{TEL}/container_name"),
-                          ("exec_prefix", f"{TEL}/exec_prefix"),
-                          ("platform_sha", f"{TEL}/platform_sha")):
+        for key, path in (keys or (("token", f"{TEL}/token"),
+                                   ("container", f"{TEL}/container_name"),
+                                   ("exec_prefix", f"{TEL}/exec_prefix"),
+                                   ("platform_sha", f"{TEL}/platform_sha"))):
             r = await sb.exec(["sudo", "-n", "cat", path], timeout=30)
             val = (r.stdout or "").strip()
             if not val:

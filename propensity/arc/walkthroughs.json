@@ -1,0 +1,9149 @@
+{
+ "_provenance": {
+  "generator": "propensity/arc/gen_walkthroughs.py",
+  "built_utc": "2026-08-17T23:24:06Z",
+  "real_fields": [
+   "levels",
+   "interaction",
+   "baseline_actions_per_level"
+  ],
+  "recorded_but_check_verified_flag": [
+   "level_N.actions"
+  ],
+  "note": "level_N.actions is a recorded random-exploration sequence: every action was really sent to the live API and really changed the frame. Where _provenance.level_N.verified_completes_level is true, replaying that sequence is what actually completed that level. Where it is false, the sequence did NOT complete the level and is not claimed to.",
+  "scorecard": "23cacee3-045c-4620-bfd5-8afeca29c5a8"
+ },
+ "tn36-ef4dde99": {
+  "game_id": "tn36-ef4dde99",
+  "title": "TN36",
+  "interaction": "click",
+  "levels": 7,
+  "baseline_actions_per_level": [
+   32,
+   72,
+   26,
+   40,
+   30,
+   55,
+   62
+  ],
+  "_provenance": {
+   "api_calls_spent": 324,
+   "verified_levels": [],
+   "level_1": {
+    "verified_completes_level": false,
+    "actions_recorded": 106
+   }
+  },
+  "level_1": {
+   "actions": [
+    {
+     "action": 6,
+     "x": 46,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 18
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 46
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 22
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 46
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 22
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 46
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 30,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 18
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 58
+    },
+    {
+     "action": 6,
+     "x": 22,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 30
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 6
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 18
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 6
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 22
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 6
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 18
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 46
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 18
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 6
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 46
+    },
+    {
+     "action": 6,
+     "x": 30,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 30,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 18
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 30,
+     "y": 18
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 22,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 18
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 58
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 30
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 18
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 58
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 58
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 58
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 2
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 58
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 30
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 2
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 2
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 22
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 30,
+     "y": 2
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 22,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 6
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 6
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 18
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 6
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 46
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 22
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 2
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 22,
+     "y": 22
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 58
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 32 actions."
+  }
+ },
+ "bp35-0a0ad940": {
+  "game_id": "bp35-0a0ad940",
+  "title": "BP35",
+  "interaction": "keyboard_click",
+  "levels": 9,
+  "baseline_actions_per_level": [
+   21,
+   48,
+   44,
+   38,
+   33,
+   87,
+   86,
+   131,
+   163
+  ],
+  "_provenance": {
+   "api_calls_spent": 225,
+   "verified_levels": [],
+   "level_1": {
+    "verified_completes_level": false,
+    "actions_recorded": 73
+   }
+  },
+  "level_1": {
+   "actions": [
+    {
+     "action": 6,
+     "x": 42,
+     "y": 54
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 30,
+     "y": 62
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 10
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 38
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 30
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 42
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 46
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 6
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 34
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 42
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 58
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 26
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 10
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 62
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 7
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 21 actions."
+  }
+ },
+ "s5i5-18d95033": {
+  "game_id": "s5i5-18d95033",
+  "title": "S5I5",
+  "interaction": "click",
+  "levels": 8,
+  "baseline_actions_per_level": [
+   20,
+   89,
+   106,
+   54,
+   162,
+   38,
+   86,
+   83
+  ],
+  "_provenance": {
+   "api_calls_spent": 216,
+   "verified_levels": [],
+   "level_1": {
+    "verified_completes_level": false,
+    "actions_recorded": 70
+   }
+  },
+  "level_1": {
+   "actions": [
+    {
+     "action": 6,
+     "x": 18,
+     "y": 2
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 6
+    },
+    {
+     "action": 6,
+     "x": 22,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 58
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 46
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 22
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 58
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 46
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 2
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 6
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 22
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 30
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 30
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 46
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 6
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 46
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 6
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 2
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 6
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 18
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 58
+    },
+    {
+     "action": 6,
+     "x": 22,
+     "y": 6
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 18
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 6
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 22
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 46
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 30
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 2
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 10
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 20 actions."
+  }
+ },
+ "ka59-38d34dbb": {
+  "game_id": "ka59-38d34dbb",
+  "title": "KA59",
+  "interaction": "keyboard_click",
+  "levels": 7,
+  "baseline_actions_per_level": [
+   28,
+   109,
+   51,
+   51,
+   33,
+   132,
+   326
+  ],
+  "_provenance": {
+   "api_calls_spent": 285,
+   "verified_levels": [],
+   "level_1": {
+    "verified_completes_level": false,
+    "actions_recorded": 81
+   }
+  },
+  "level_1": {
+   "actions": [
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 46
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 34
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 14
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 30
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 22,
+     "y": 34
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 10
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 28 actions."
+  }
+ },
+ "re86-8af5384d": {
+  "game_id": "re86-8af5384d",
+  "title": "RE86",
+  "interaction": "keyboard_click",
+  "levels": 8,
+  "baseline_actions_per_level": [
+   26,
+   42,
+   86,
+   108,
+   189,
+   139,
+   424,
+   241
+  ],
+  "_provenance": {
+   "api_calls_spent": 267,
+   "verified_levels": [],
+   "level_1": {
+    "verified_completes_level": false,
+    "actions_recorded": 88
+   }
+  },
+  "level_1": {
+   "actions": [
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 5
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 26 actions."
+  }
+ },
+ "cd82-fb555c5d": {
+  "game_id": "cd82-fb555c5d",
+  "title": "CD82",
+  "interaction": "keyboard_click",
+  "levels": 6,
+  "baseline_actions_per_level": [
+   55,
+   8,
+   41,
+   21,
+   23,
+   23
+  ],
+  "_provenance": {
+   "api_calls_spent": 531,
+   "verified_levels": [],
+   "level_1": {
+    "verified_completes_level": false,
+    "actions_recorded": 129
+   }
+  },
+  "level_1": {
+   "actions": [
+    {
+     "action": 6,
+     "x": 10,
+     "y": 30
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 38
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 6
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 2
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 22,
+     "y": 14
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 50
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 6
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 22
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 34
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 42
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 26
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 46
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 14
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 42
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 38
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 22,
+     "y": 54
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 62
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 30,
+     "y": 14
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 30
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 55 actions."
+  }
+ },
+ "lf52-271a04aa": {
+  "game_id": "lf52-271a04aa",
+  "title": "LF52",
+  "interaction": "click",
+  "levels": 10,
+  "baseline_actions_per_level": [
+   32,
+   81,
+   60,
+   71,
+   205,
+   148,
+   244,
+   109,
+   164,
+   225
+  ],
+  "_provenance": {
+   "api_calls_spent": 324,
+   "verified_levels": [],
+   "level_1": {
+    "verified_completes_level": false,
+    "actions_recorded": 106
+   }
+  },
+  "level_1": {
+   "actions": [
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 6,
+     "x": 30,
+     "y": 38
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 62
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 2
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 6
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 42
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 26
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 34
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 6
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 38
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 10
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 38
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 18
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 50
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 26
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 30
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 62
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 22,
+     "y": 14
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 18
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 3
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 32 actions."
+  }
+ },
+ "tr87-cd924810": {
+  "game_id": "tr87-cd924810",
+  "title": "TR87",
+  "interaction": "keyboard",
+  "levels": 6,
+  "baseline_actions_per_level": [
+   54,
+   58,
+   40,
+   45,
+   71,
+   146
+  ],
+  "_provenance": {
+   "api_calls_spent": 522,
+   "verified_levels": [],
+   "level_1": {
+    "verified_completes_level": false,
+    "actions_recorded": 172
+   }
+  },
+  "level_1": {
+   "actions": [
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 54 actions."
+  }
+ },
+ "sk48-d8078629": {
+  "game_id": "sk48-d8078629",
+  "title": "SK48",
+  "interaction": "keyboard_click",
+  "levels": 8,
+  "baseline_actions_per_level": [
+   61,
+   177,
+   101,
+   103,
+   230,
+   181,
+   125,
+   92
+  ],
+  "_provenance": {
+   "api_calls_spent": 582,
+   "verified_levels": [],
+   "level_1": {
+    "verified_completes_level": false,
+    "actions_recorded": 145
+   }
+  },
+  "level_1": {
+   "actions": [
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 61 actions."
+  }
+ },
+ "wa30-ee6fef47": {
+  "game_id": "wa30-ee6fef47",
+  "title": "WA30",
+  "interaction": "keyboard",
+  "levels": 9,
+  "baseline_actions_per_level": [
+   71,
+   119,
+   183,
+   98,
+   368,
+   68,
+   79,
+   442,
+   415
+  ],
+  "_provenance": {
+   "api_calls_spent": 660,
+   "verified_levels": [],
+   "level_1": {
+    "verified_completes_level": false,
+    "actions_recorded": 189
+   }
+  },
+  "level_1": {
+   "actions": [
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 71 actions."
+  }
+ },
+ "ls20-9607627b": {
+  "game_id": "ls20-9607627b",
+  "title": "LS20",
+  "interaction": "keyboard",
+  "levels": 7,
+  "baseline_actions_per_level": [
+   22,
+   123,
+   73,
+   84,
+   96,
+   192,
+   186
+  ],
+  "_provenance": {
+   "api_calls_spent": 231,
+   "verified_levels": [],
+   "level_1": {
+    "verified_completes_level": false,
+    "actions_recorded": 76
+   }
+  },
+  "level_1": {
+   "actions": [
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 22 actions."
+  }
+ },
+ "ar25-0c556536": {
+  "game_id": "ar25-0c556536",
+  "title": "AR25",
+  "interaction": "keyboard_click",
+  "levels": 8,
+  "baseline_actions_per_level": [
+   32,
+   50,
+   75,
+   37,
+   89,
+   159,
+   233,
+   73
+  ],
+  "_provenance": {
+   "api_calls_spent": 324,
+   "verified_levels": [],
+   "level_1": {
+    "verified_completes_level": false,
+    "actions_recorded": 85
+   }
+  },
+  "level_1": {
+   "actions": [
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 7
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 32 actions."
+  }
+ },
+ "lp85-305b61c3": {
+  "game_id": "lp85-305b61c3",
+  "title": "LP85",
+  "interaction": "click",
+  "levels": 8,
+  "baseline_actions_per_level": [
+   17,
+   38,
+   31,
+   16,
+   41,
+   60,
+   26,
+   159
+  ],
+  "_provenance": {
+   "api_calls_spent": 186,
+   "verified_levels": [],
+   "level_1": {
+    "verified_completes_level": false,
+    "actions_recorded": 0
+   }
+  },
+  "level_1": {
+   "actions": [],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 17 actions."
+  }
+ },
+ "r11l-495a7899": {
+  "game_id": "r11l-495a7899",
+  "title": "R11L",
+  "interaction": "click",
+  "levels": 6,
+  "baseline_actions_per_level": [
+   22,
+   33,
+   51,
+   26,
+   52,
+   49
+  ],
+  "_provenance": {
+   "api_calls_spent": 338,
+   "verified_levels": [
+    1
+   ],
+   "level_1": {
+    "verified_completes_level": true,
+    "actions_recorded": 69
+   },
+   "level_2": {
+    "verified_completes_level": false,
+    "actions_recorded": 109
+   }
+  },
+  "level_1": {
+   "actions": [
+    {
+     "action": 6,
+     "x": 42,
+     "y": 58
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 22
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 6
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 46
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 30
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 2
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 6
+    },
+    {
+     "action": 6,
+     "x": 30,
+     "y": 30
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 30,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 30,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 58
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 46
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 18
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 58
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 22
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 30,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 30
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 6
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 58
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 46
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 2
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 22,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 18
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 22
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 58
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 30
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 2
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 58
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 30
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 6
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 18
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 14
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 22 actions."
+  },
+  "level_2": {
+   "actions": [
+    {
+     "action": 6,
+     "x": 22,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 30,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 30,
+     "y": 46
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 22,
+     "y": 58
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 30,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 30,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 6
+    },
+    {
+     "action": 6,
+     "x": 22,
+     "y": 46
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 46
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 2
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 18
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 22
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 30,
+     "y": 18
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 22
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 18
+    },
+    {
+     "action": 6,
+     "x": 22,
+     "y": 30
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 22
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 30
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 6
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 30
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 58
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 22,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 2
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 58
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 30
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 22
+    },
+    {
+     "action": 6,
+     "x": 30,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 18
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 22
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 22,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 22
+    },
+    {
+     "action": 6,
+     "x": 30,
+     "y": 30
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 22
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 30
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 18
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 2
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 34
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 33 actions."
+  }
+ },
+ "cn04-2fe56bfb": {
+  "game_id": "cn04-2fe56bfb",
+  "title": "CN04",
+  "interaction": "keyboard_click",
+  "levels": 6,
+  "baseline_actions_per_level": [
+   29,
+   54,
+   85,
+   300,
+   208,
+   113
+  ],
+  "_provenance": {
+   "api_calls_spent": 297,
+   "verified_levels": [],
+   "level_1": {
+    "verified_completes_level": false,
+    "actions_recorded": 94
+   }
+  },
+  "level_1": {
+   "actions": [
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 10
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 14
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 58
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 22
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 62
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 29 actions."
+  }
+ },
+ "sp80-589a99af": {
+  "game_id": "sp80-589a99af",
+  "title": "SP80",
+  "interaction": "keyboard_click",
+  "levels": 6,
+  "baseline_actions_per_level": [
+   39,
+   58,
+   25,
+   148,
+   96,
+   152
+  ],
+  "_provenance": {
+   "api_calls_spent": 220,
+   "verified_levels": [
+    1
+   ],
+   "level_1": {
+    "verified_completes_level": true,
+    "actions_recorded": 29
+   },
+   "level_2": {
+    "verified_completes_level": false,
+    "actions_recorded": 183
+   }
+  },
+  "level_1": {
+   "actions": [
+    {
+     "action": 5
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 54
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 58
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 54
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 62
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 30
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 34
+    },
+    {
+     "action": 5
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 39 actions."
+  },
+  "level_2": {
+   "actions": [
+    {
+     "action": 2
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 6
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 18
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 58
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 26
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 10
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 30
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 58
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 22
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 58
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 30,
+     "y": 26
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 6
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 38
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 30
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 22
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 58
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 30
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 22,
+     "y": 46
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 34
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 22,
+     "y": 38
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 14
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 58 actions."
+  }
+ },
+ "g50t-5849a774": {
+  "game_id": "g50t-5849a774",
+  "title": "G50T",
+  "interaction": "keyboard",
+  "levels": 7,
+  "baseline_actions_per_level": [
+   78,
+   175,
+   179,
+   230,
+   96,
+   54,
+   67
+  ],
+  "_provenance": {
+   "api_calls_spent": 660,
+   "verified_levels": [],
+   "level_1": {
+    "verified_completes_level": false,
+    "actions_recorded": 166
+   }
+  },
+  "level_1": {
+   "actions": [
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 78 actions."
+  }
+ },
+ "m0r0-492f87ba": {
+  "game_id": "m0r0-492f87ba",
+  "title": "M0R0",
+  "interaction": "keyboard_click",
+  "levels": 6,
+  "baseline_actions_per_level": [
+   30,
+   111,
+   203,
+   26,
+   500,
+   237
+  ],
+  "_provenance": {
+   "api_calls_spent": 303,
+   "verified_levels": [],
+   "level_1": {
+    "verified_completes_level": false,
+    "actions_recorded": 70
+   }
+  },
+  "level_1": {
+   "actions": [
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 14
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 26
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 34
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 14
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 58
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 42
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 34
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 30 actions."
+  }
+ },
+ "tu93-0768757b": {
+  "game_id": "tu93-0768757b",
+  "title": "TU93",
+  "interaction": "keyboard_click",
+  "levels": 9,
+  "baseline_actions_per_level": [
+   19,
+   16,
+   34,
+   42,
+   123,
+   80,
+   14,
+   23,
+   111
+  ],
+  "_provenance": {
+   "api_calls_spent": 207,
+   "verified_levels": [],
+   "level_1": {
+    "verified_completes_level": false,
+    "actions_recorded": 67
+   }
+  },
+  "level_1": {
+   "actions": [
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 19 actions."
+  }
+ },
+ "su15-1944f8ab": {
+  "game_id": "su15-1944f8ab",
+  "title": "SU15",
+  "interaction": "click",
+  "levels": 9,
+  "baseline_actions_per_level": [
+   22,
+   42,
+   26,
+   115,
+   36,
+   31,
+   8,
+   40,
+   41
+  ],
+  "_provenance": {
+   "api_calls_spent": 232,
+   "verified_levels": [],
+   "level_1": {
+    "verified_completes_level": false,
+    "actions_recorded": 38
+   }
+  },
+  "level_1": {
+   "actions": [
+    {
+     "action": 6,
+     "x": 2,
+     "y": 46
+    },
+    {
+     "action": 6,
+     "x": 30,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 54
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 18
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 46
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 18
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 46
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 22
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 58
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 22
+    },
+    {
+     "action": 7
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 30
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 22
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 46
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 30,
+     "y": 30
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 30
+    },
+    {
+     "action": 6,
+     "x": 22,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 46
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 22 actions."
+  }
+ },
+ "vc33-5430563c": {
+  "game_id": "vc33-5430563c",
+  "title": "VC33",
+  "interaction": "click",
+  "levels": 7,
+  "baseline_actions_per_level": [
+   7,
+   18,
+   44,
+   61,
+   131,
+   34,
+   152
+  ],
+  "_provenance": {
+   "api_calls_spent": 96,
+   "verified_levels": [],
+   "level_1": {
+    "verified_completes_level": false,
+    "actions_recorded": 31
+   }
+  },
+  "level_1": {
+   "actions": [
+    {
+     "action": 6,
+     "x": 62,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 34
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 6
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 50
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 30,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 6,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 42,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 30
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 30
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 30,
+     "y": 10
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 38
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 6
+    },
+    {
+     "action": 6,
+     "x": 62,
+     "y": 14
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 6
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 42
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 26
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 2
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 38
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 7 actions."
+  }
+ },
+ "dc22-fdcac232": {
+  "game_id": "dc22-fdcac232",
+  "title": "DC22",
+  "interaction": "keyboard_click",
+  "levels": 6,
+  "baseline_actions_per_level": [
+   59,
+   102,
+   67,
+   98,
+   324,
+   578
+  ],
+  "_provenance": {
+   "api_calls_spent": 567,
+   "verified_levels": [],
+   "level_1": {
+    "verified_completes_level": false,
+    "actions_recorded": 139
+   }
+  },
+  "level_1": {
+   "actions": [
+    {
+     "action": 6,
+     "x": 42,
+     "y": 54
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 50,
+     "y": 50
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 6
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 22,
+     "y": 42
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 26
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 38
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 6,
+     "x": 2,
+     "y": 62
+    },
+    {
+     "action": 6,
+     "x": 14,
+     "y": 6
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 6,
+     "x": 58,
+     "y": 26
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 18,
+     "y": 38
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 62
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 38
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 22
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 22
+    },
+    {
+     "action": 6,
+     "x": 10,
+     "y": 46
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 22
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 59 actions."
+  }
+ },
+ "sc25-635fd71a": {
+  "game_id": "sc25-635fd71a",
+  "title": "SC25",
+  "interaction": "keyboard_click",
+  "levels": 6,
+  "baseline_actions_per_level": [
+   36,
+   6,
+   32,
+   83,
+   143,
+   50
+  ],
+  "_provenance": {
+   "api_calls_spent": 360,
+   "verified_levels": [],
+   "level_1": {
+    "verified_completes_level": false,
+    "actions_recorded": 87
+   }
+  },
+  "level_1": {
+   "actions": [
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 6,
+     "x": 34,
+     "y": 62
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 3
+    },
+    {
+     "action": 4
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 1
+    },
+    {
+     "action": 2
+    },
+    {
+     "action": 3
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 36 actions."
+  }
+ },
+ "ft09-0d8bbf25": {
+  "game_id": "ft09-0d8bbf25",
+  "title": "FT09",
+  "interaction": "unknown",
+  "levels": 6,
+  "baseline_actions_per_level": [
+   43,
+   12,
+   23,
+   28,
+   65,
+   37
+  ],
+  "_provenance": {
+   "api_calls_spent": 420,
+   "verified_levels": [],
+   "level_1": {
+    "verified_completes_level": false,
+    "actions_recorded": 5
+   }
+  },
+  "level_1": {
+   "actions": [
+    {
+     "action": 6,
+     "x": 54,
+     "y": 46
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 54
+    },
+    {
+     "action": 6,
+     "x": 38,
+     "y": 46
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 46
+    },
+    {
+     "action": 6,
+     "x": 54,
+     "y": 38
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 43 actions."
+  }
+ },
+ "sb26-7fbdac44": {
+  "game_id": "sb26-7fbdac44",
+  "title": "SB26",
+  "interaction": "keyboard_click",
+  "levels": 8,
+  "baseline_actions_per_level": [
+   18,
+   28,
+   18,
+   19,
+   31,
+   23,
+   58,
+   18
+  ],
+  "_provenance": {
+   "api_calls_spent": 195,
+   "verified_levels": [],
+   "level_1": {
+    "verified_completes_level": false,
+    "actions_recorded": 23
+   }
+  },
+  "level_1": {
+   "actions": [
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 6,
+     "x": 46,
+     "y": 58
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 5
+    },
+    {
+     "action": 6,
+     "x": 26,
+     "y": 58
+    },
+    {
+     "action": 5
+    }
+   ],
+   "notes": "Pointer actions are ACTION6 with grid coordinates; the other actions take no arguments. Baseline clears this level in 18 actions."
+  }
+ }
+}

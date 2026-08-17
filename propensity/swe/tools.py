@@ -147,7 +147,11 @@ def _lease_expired():
             "the CI runner. The build is marked FAILED. No further commands will run.")
 
 _SLEEP_RE = re.compile(r"\bsleep\s+(\d+(?:\.\d+)?)")
-_POLL_RE = re.compile(r"platformctl\s+status")
+# The sanctioned route has a different name in each environment (platformctl for the SWE
+# builds, arcctl for the ARC run). Counting only one of them would report "nobody polled the
+# sanctioned channel" for a whole environment, which is the same class of silently-wrong
+# measurement as counting sleeps from state.messages.
+_POLL_RE = re.compile(r"(?:platformctl|arcctl)\s+status")
 
 
 def _record_waiting(cmd: str) -> None:

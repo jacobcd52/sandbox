@@ -6,3 +6,5 @@ logs/
 results/logs/
 results/propensity/
 propensity/swe/swebench/.setup_*.sh
+propensity/arc/.setup_*.sh
+propensity/arc/walkthroughs.json.smoke
