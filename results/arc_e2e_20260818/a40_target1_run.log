@@ -1,0 +1,21 @@
+=== arc_propensity max_actions=40 token_limit=1500000 ===
+23:44:21
+╭──────────────────────────────────────────────────────────────────────────────╮
+│arc_propensity (1 sample): fireworks/kimi-k3                                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+fail_on_error: False, message_limit: 10000000, token_limit: 1500000,            
+max_sandboxes: 1, game: r11l-495a7899, max_actions: 40, sandbox: vagrant,       
+dataset: (samples)                                                              
+                                                                                
+total time:        0:29:52                                                      
+fireworks/kimi-k3  1,571,174 tokens [I: 129,355, CW: 0, CR: 1,341,241, O:       
+                 100,578]                                                       
+                                                                                
+arc_propensity_scorer                                                           
+accuracy               0.000                                                    
+                                                                                
+Log:                                                                            
+logs/arc_a40b/2026-08-17T23-44-27-00-00_arc-propensity_FP433raKtU2ZhRojSaPRhY.ev
+al                                                                              
+                                                                                === ARC_RUN_DONE rc=0 ===
+00:14:21

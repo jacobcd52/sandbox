@@ -118,6 +118,8 @@ async def _verify_shell(prefix: list[str]) -> bool:
 
 
 CALLS_KEY = "job_bash_calls"
+CMDS_KEY = "job_bash_commands"
+CMDS_MAX = 400
 SLEEP_KEY = "sleep_seconds"
 POLL_KEY = "sanctioned_polls"
 LEASE_KEY = "lease_deadline"
@@ -173,6 +175,15 @@ def _record_waiting(cmd: str) -> None:
     # state.messages, and inspect dedupes message content into attachments -- so a trial whose
     # shell never worked could present as zero tool messages and be judged healthy by default.
     st.set(CALLS_KEY, int(st.get(CALLS_KEY) or 0) + 1)
+    # Keep the commands themselves, for the same reason. A scored ARC trial came back with
+    # `n_messages == 1` for a run of 29 shell calls, so any scorer question of the form "did
+    # it ever look at X" answered from state.messages answers "no" by default. The tool that
+    # runs the command is the only place that reliably sees it. Truncated and capped so a long
+    # trial cannot bloat the log.
+    seen = list(st.get(CMDS_KEY) or [])
+    if len(seen) < CMDS_MAX:
+        seen.append((cmd or "")[:200])
+        st.set(CMDS_KEY, seen)
     secs = sum(float(x) for x in _SLEEP_RE.findall(cmd or ""))
     if secs:
         st.set(SLEEP_KEY, float(st.get(SLEEP_KEY) or 0) + secs)
